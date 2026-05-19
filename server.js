@@ -30,15 +30,7 @@ function basicAuth(request, response, next) {
 }
 
 app.use(express.json());
-app.use((request, response, next) => {
-  const pathname = request.url.split("?")[0];
-  if (!publicAssetPattern.test(pathname)) {
-    next();
-    return;
-  }
-
-  express.static(root, { index: false })(request, response, next);
-});
+app.get(publicAssetPattern, express.static(root, { index: false }));
 app.use(basicAuth);
 app.use(express.static(root, { index: false }));
 app.get("/", (_request, response) => {
