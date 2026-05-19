@@ -17,6 +17,8 @@ const pool = process.env.DATABASE_URL
     })
   : null;
 
+const publicAssetPattern = /\.(css|js|mjs|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|map)$/i;
+
 function basicAuth(request, response, next) {
   if (!hasAuthConfig() || validateBasicAuth(request.headers.authorization)) {
     next();
@@ -28,8 +30,17 @@ function basicAuth(request, response, next) {
 }
 
 app.use(express.json());
+app.use((request, response, next) => {
+  const pathname = request.url.split("?")[0];
+  if (!publicAssetPattern.test(pathname)) {
+    next();
+    return;
+  }
+
+  express.static(root, { index: false })(request, response, next);
+});
 app.use(basicAuth);
-app.use(express.static(root));
+app.use(express.static(root, { index: false }));
 app.get("/", (_request, response) => {
   response.sendFile(path.join(root, "index.html"));
 });
