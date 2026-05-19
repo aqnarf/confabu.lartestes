@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leitor | Estante Infantil</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="reader-shell-header">
+      <a class="back-link" data-book-back href="livro.html">Voltar ao livro</a>
+      <a class="brand" href="index.html" aria-label="Página inicial">
+        <span class="brand-mark"></span>
+        <span>Estante Infantil</span>
+      </a>
+    </header>
+
+    <main class="reader-shell" data-reader-page>
+      <section class="reader kindle-reader" data-reader>
+        <div class="reader-topbar">
+          <div>
+            <p class="reader-kicker">Lendo agora</p>
+            <h1 data-reader-title></h1>
+          </div>
+          <div class="reader-controls" aria-label="Configurações de leitura">
+            <button class="icon-button" data-font-down type="button" title="Diminuir texto">A-</button>
+            <button class="icon-button" data-font-up type="button" title="Aumentar texto">A+</button>
+            <button class="icon-button active" data-theme="light" type="button" title="Tema claro"></button>
+            <button class="icon-button sepia" data-theme="sepia" type="button" title="Tema sépia"></button>
+            <button class="icon-button dark" data-theme="dark" type="button" title="Tema escuro"></button>
+          </div>
+        </div>
+        <div class="reader-device">
+          <div class="reader-status">
+            <span data-reader-format></span>
+            <span data-reader-page-count>1 de 1</span>
+          </div>
+          <iframe class="pdf-viewer" data-pdf-viewer title="Leitor em PDF"></iframe>
+          <article class="reader-pages" data-reader-text></article>
+          <div class="reader-progress" aria-hidden="true">
+            <span></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

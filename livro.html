@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Livro | Estante Infantil</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Página inicial">
+        <span class="brand-mark"></span>
+        <span>Estante Infantil</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="busca.html">Buscar</a>
+      </nav>
+    </header>
+
+    <main data-book-page>
+      <a class="back-link" href="busca.html">Voltar para busca</a>
+
+      <section class="book-detail">
+        <div class="detail-panel">
+          <p class="eyebrow" data-book-category></p>
+          <h1 data-book-title></h1>
+          <p class="book-author" data-book-author></p>
+          <dl class="metadata">
+            <div>
+              <dt>Faixa etária</dt>
+              <dd data-book-age></dd>
+            </div>
+            <div>
+              <dt>Formato</dt>
+              <dd data-book-format></dd>
+            </div>
+            <div>
+              <dt>Tempo de leitura</dt>
+              <dd data-book-time></dd>
+            </div>
+          </dl>
+          <div class="detail-actions">
+            <a class="button primary" data-read-link href="leitor.html">Ler online</a>
+            <button class="button outline" data-open-terms type="button">Baixar livro</button>
+          </div>
+          <div class="rights-summary">
+            <h2>Uso da obra</h2>
+            <p>Leitura online livre. Download permitido para uso educacional, pessoal e não comercial, conforme os termos de uso e direitos autorais.</p>
+            <div>
+              <a href="termos.html#termos">Termos de uso</a>
+              <a href="termos.html#direitos">Direitos autorais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-cover" data-book-cover></div>
+
+        <aside class="detail-reading-panel">
+          <p data-book-description></p>
+          <blockquote data-book-quote></blockquote>
+          <p class="detail-note">Disponível para leitura online e download mediante aceite dos termos de uso.</p>
+        </aside>
+      </section>
+
+      <section class="recommendations">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Continue explorando</p>
+            <h2>Outras obras recomendadas</h2>
+          </div>
+          <a class="button outline" href="busca.html">Ver catálogo</a>
+        </div>
+        <div class="book-grid recommended-grid" data-recommended-books></div>
+      </section>
+    </main>
+
+    <dialog class="terms-modal" data-terms-modal>
+      <form method="dialog">
+        <p class="eyebrow">Antes do download</p>
+        <h2>Termos de Uso e Direitos Autorais</h2>
+        <p>Confira o resumo para baixar esta obra. O texto completo fica disponível para consulta a qualquer momento.</p>
+        <div class="terms-grid">
+          <section>
+            <h3>Uso permitido</h3>
+            <ul>
+              <li>Leitura, estudo e atividades educacionais.</li>
+              <li>Mediação de leitura em sala, biblioteca ou projeto cultural.</li>
+              <li>Arquivo mantido com créditos e autoria preservados.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Restrições</h3>
+            <ul>
+              <li>Não vender, republicar ou redistribuir sem autorização.</li>
+              <li>Não remover autoria, créditos, capa ou informações editoriais.</li>
+              <li>Não adaptar ou alterar a obra sem permissão.</li>
+            </ul>
+          </section>
+        </div>
+        <a class="terms-full-link" href="termos.html">Ler texto completo</a>
+        <label class="terms-check">
+          <input type="checkbox" data-terms-check>
+          <span>Li e aceito os Termos de Uso e Direitos Autorais para baixar esta obra.</span>
+        </label>
+        <div class="modal-actions">
+          <button class="button ghost" value="cancel" type="submit">Cancelar</button>
+          <button class="button primary" data-download-book type="button" disabled>Aceitar e baixar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer class="site-footer">
+      <p>Detalhes da obra, recomendações e download com termos de uso.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

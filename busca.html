@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buscar obras | Estante Infantil</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Página inicial">
+        <span class="brand-mark"></span>
+        <span>Estante Infantil</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="busca.html">Buscar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="search-hero">
+        <p class="eyebrow">Catálogo</p>
+        <h1>Encontre histórias por tema, idade ou formato.</h1>
+      </section>
+
+      <section class="catalog-layout">
+        <aside class="filters" aria-label="Filtros de busca">
+          <label class="search-box">
+            <span>Busca</span>
+            <input data-search-input type="search" placeholder="Título, autora ou assunto">
+          </label>
+
+          <div class="filter-group">
+            <h2>Categoria</h2>
+            <div class="chip-list" data-category-filters></div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Faixa etária</h2>
+            <div class="chip-list" data-age-filters></div>
+          </div>
+
+          <div class="filter-group">
+            <h2>Formato</h2>
+            <div class="chip-list" data-format-filters></div>
+          </div>
+        </aside>
+
+        <section class="results-area" aria-live="polite">
+          <div class="results-bar">
+            <p data-results-count></p>
+            <button class="button outline" data-clear-filters type="button">Limpar filtros</button>
+          </div>
+          <div class="book-grid compact" data-book-results></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>As obras do catálogo podem ser lidas online ou baixadas após aceite dos termos.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
