@@ -18,6 +18,9 @@ const pool = process.env.DATABASE_URL
 
 app.use(express.json());
 app.use(express.static(root));
+app.get("/", (_request, response) => {
+  response.sendFile(path.join(root, "index.html"));
+});
 
 function mapBook(row) {
   return {
@@ -85,6 +88,10 @@ app.get("/api/health", async (_request, response) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Estante Infantil em http://localhost:${port}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`Estante Infantil em http://localhost:${port}`);
+  });
+}
+
+export default app;
