@@ -3,6 +3,7 @@ import express from "express";
 import pg from "pg";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { authRealm, hasAuthConfig, validateBasicAuth } from "./auth.js";
 
 const { Pool } = pg;
 const app = express();
@@ -16,7 +17,18 @@ const pool = process.env.DATABASE_URL
     })
   : null;
 
+function basicAuth(request, response, next) {
+  if (!hasAuthConfig() || validateBasicAuth(request.headers.authorization)) {
+    next();
+    return;
+  }
+
+  response.set("WWW-Authenticate", `Basic realm="${authRealm}", charset="UTF-8"`);
+  response.status(401).send("Autenticacao necessaria.");
+}
+
 app.use(express.json());
+app.use(basicAuth);
 app.use(express.static(root));
 app.get("/", (_request, response) => {
   response.sendFile(path.join(root, "index.html"));
