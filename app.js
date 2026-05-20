@@ -10,6 +10,7 @@ let books = [
     featured: true,
     colors: ["#d8f0e4", "#ff8e78"],
     ink: "#16382f",
+    coverImage: "assets/figma/hero-cover.png",
     pdfUrl: "",
     description: "Uma menina descobre que cada pergunta plantada no quintal vira uma flor diferente.",
     excerpt: [
@@ -314,11 +315,23 @@ const state = {
   query: ""
 };
 
-function coverTemplate(book) {
+function coverShape(book) {
+  const format = (book.format || "").toLowerCase();
+  if (format.includes("conto")) return "horizontal";
+  if (format.includes("cap")) return "vertical";
+  return "square";
+}
+
+function coverTemplate(book, variant = "default") {
+  const shape = coverShape(book);
+  const variantClass = variant === "card" ? "cover-card" : "cover-detail";
+  const coverImage = book.coverImage ? `<img class="cover-image" src="${book.coverImage}" alt="Capa do livro ${book.title}">` : "";
+  const coverContent = coverImage;
   return `
-    <div class="cover" style="--cover-bg: ${book.colors[0]}; --cover-accent: ${book.colors[1]}; --cover-ink: ${book.ink}">
-      <span class="cover-symbol"></span>
-      <span class="cover-title">${book.title}</span>
+    <div class="cover ${variantClass}" style="--cover-bg: ${book.colors[0]}; --cover-accent: ${book.colors[1]}; --cover-ink: ${book.ink}">
+      <div class="cover-art cover-art-${shape} ${book.coverImage ? "cover-art-image" : "cover-art-plain"}">
+        ${coverContent}
+      </div>
     </div>
   `;
 }
@@ -326,14 +339,10 @@ function coverTemplate(book) {
 function bookCard(book) {
   return `
     <a class="book-card" href="livro.html?id=${book.id}">
-      ${coverTemplate(book)}
+      ${coverTemplate(book, "card")}
       <div class="book-info">
         <h3>${book.title}</h3>
-        <p>${book.author}</p>
-        <div class="tag-row">
-          <span class="tag">${book.category}</span>
-          <span class="tag">${book.age}</span>
-        </div>
+        <span class="book-card-link">Ver detalhes</span>
       </div>
     </a>
   `;
@@ -342,7 +351,9 @@ function bookCard(book) {
 function renderFeatured() {
   const target = document.querySelector("[data-featured-books]");
   if (!target) return;
-  target.innerHTML = books.filter((book) => book.featured).map(bookCard).join("");
+  const featuredBooks = books.filter((book) => book.featured);
+  const remainingBooks = books.filter((book) => !book.featured);
+  target.innerHTML = [...featuredBooks, ...remainingBooks].slice(0, 8).map(bookCard).join("");
 }
 
 function renderEditorialPick() {
@@ -444,7 +455,7 @@ function setupHeroFloatMotion() {
   window.addEventListener("resize", requestUpdate);
 }
 
-function renderCategoryBento() {
+function renderCategoryBentoLegacy() {
   const target = document.querySelector("[data-category-bento]");
   if (!target) return;
 
@@ -462,6 +473,117 @@ function renderCategoryBento() {
       </a>
     `;
   }).join("");
+}
+
+function renderCategoryBento() {
+  const target = document.querySelector("[data-category-bento]");
+  if (!target) return;
+
+  const categoryNames = categories().filter((category) => category !== "Todos");
+  const featuredCategory = categoryNames.includes("Aventura") ? "Aventura" : categoryNames[0];
+  const featuredIndex = categoryNames.indexOf(featuredCategory) + 1;
+  const featuredCopy = categoryCopy[featuredCategory] || "Viagens, pistas e descobertas";
+  const shortCopy = featuredCopy.split(".")[0].replace(" para leitores curiosos", "");
+  const markerCategories = [
+    categoryNames[0],
+    categoryNames[2],
+    categoryNames[3],
+    featuredCategory,
+    categoryNames[4],
+    categoryNames[5],
+    categoryNames[1]
+  ].filter(Boolean);
+
+  target.innerHTML = `
+    <div class="category-float category-float-left" aria-hidden="true"></div>
+    <div class="category-float category-float-right" aria-hidden="true"></div>
+
+    <div class="category-content">
+      <div class="category-title">
+        <span class="category-tag">Fantasia</span>
+        <h2>Confira nossos<br>tentáculos</h2>
+      </div>
+
+      <div class="category-bookmarks" aria-label="Categorias em destaque">
+        ${markerCategories.map((category, index) => {
+          const isFeatured = index === 3;
+          const colorClass = index % 3 === 0 ? "soft" : index % 3 === 1 ? "light" : "brand";
+          return isFeatured
+            ? `
+              <a class="category-marker active" href="busca.html?category=${encodeURIComponent(category)}" aria-label="Ver categoria ${category}">
+                <span class="category-marker-inner">
+                  <span class="category-marker-top">
+                    <span>${shortCopy}</span>
+                    <strong>#${featuredIndex}</strong>
+                  </span>
+                  <span class="category-marker-line"></span>
+                  <span class="category-marker-name">${category}</span>
+                </span>
+              </a>
+            `
+            : `<a class="category-marker ${colorClass}" href="busca.html?category=${encodeURIComponent(category)}" aria-label="Ver categoria ${category}"></a>`;
+        }).join("")}
+      </div>
+
+      <a class="category-button" href="busca.html" aria-label="Ver lista completa de categorias">
+        <span>Ver lista completa</span>
+        <span class="category-button-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  `;
+}
+
+function setupCategoryScrollMotion() {
+  const section = document.querySelector("[data-category-bento]");
+  const markers = [...document.querySelectorAll(".category-marker")];
+  if (!section || !markers.length) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const startY = [-56, -20, 0, 44, 0, -20, -56];
+  const finalY = [94, 48, 28, 14, 28, 48, 94];
+
+  const setFinalState = () => {
+    markers.forEach((marker, index) => {
+      marker.style.transform = `translate3d(0, ${finalY[index] || 0}px, 0)`;
+      marker.style.opacity = "1";
+    });
+  };
+
+  if (reduceMotion.matches) {
+    setFinalState();
+    return;
+  }
+
+  let ticking = false;
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+  const easeOutCubic = (value) => 1 - Math.pow(1 - value, 3);
+
+  const updateMarkers = () => {
+    const rect = section.getBoundingClientRect();
+    const viewport = window.innerHeight || document.documentElement.clientHeight;
+    const start = viewport * 0.28;
+    const distance = Math.max(rect.height * 0.32, 300);
+    const progress = easeOutCubic(clamp((start - rect.top) / distance, 0, 1));
+    const rest = 1 - progress;
+
+    markers.forEach((marker, index) => {
+      const y = (startY[index] || 0) + ((finalY[index] || 0) - (startY[index] || 0)) * progress;
+      marker.style.transform = `translate3d(0, ${y}px, 0)`;
+      marker.style.opacity = String(0.68 + progress * 0.32);
+    });
+
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateMarkers);
+  };
+
+  updateMarkers();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 }
 
 function createChips(target, items, key) {
@@ -594,14 +716,12 @@ function setupBookPage() {
   document.querySelector("[data-book-category]").textContent = book.category;
   document.querySelector("[data-book-title]").textContent = book.title;
   document.querySelector("[data-book-author]").textContent = book.author;
-  document.querySelector("[data-book-description]").textContent = book.description;
-  document.querySelector("[data-book-quote]").textContent = book.excerpt[0];
-  document.querySelector("[data-book-age]").textContent = book.age;
   document.querySelector("[data-book-format]").textContent = book.format;
-  document.querySelector("[data-book-time]").textContent = book.time;
   document.querySelector("[data-book-cover]").innerHTML = coverTemplate(book);
   document.querySelector("[data-read-link]").href = `leitor.html?id=${book.id}`;
-  document.querySelector("[data-recommended-books]").innerHTML = recommendedBooks(book).map(bookCard).join("");
+  const headerReadLink = document.querySelector("[data-read-link-header]");
+  if (headerReadLink) headerReadLink.href = `leitor.html?id=${book.id}`;
+  document.querySelector("[data-recommended-books]").innerHTML = [book, ...recommendedBooks(book)].map(bookCard).join("");
   setupRecommendationCarousel();
 
   const modal = document.querySelector("[data-terms-modal]");
@@ -715,6 +835,7 @@ async function initApp() {
   setupHeroFloatMotion();
   renderFeatured();
   renderCategoryBento();
+  setupCategoryScrollMotion();
   setupSearch();
   setupBookPage();
   setupReaderPage();
