@@ -372,6 +372,78 @@ function renderEditorialPick() {
   `;
 }
 
+function renderFigmaHero() {
+  const target = document.querySelector("[data-editorial-pick]");
+  if (!target) return;
+
+  const book = books.find((item) => item.id === "jardim-das-perguntas") || books[0];
+  target.innerHTML = `
+    <div class="editorial-shell">
+      <img class="hero-float hero-float-left" src="assets/figma/hero-float-left.svg" alt="" aria-hidden="true">
+      <img class="hero-float hero-float-top" src="assets/figma/hero-float-top.svg" alt="" aria-hidden="true">
+
+      <div class="editorial-note">
+        <img class="hero-logo" src="assets/figma/confabulab-logo.svg" alt="confabu.lab">
+        <div class="hero-title-group">
+          <p class="hero-title">${book.title}</p>
+          <p class="hero-description">${book.description}</p>
+        </div>
+        <div class="hero-actions">
+          <span class="hero-season">2026.1</span>
+          <a class="hero-primary-button" href="leitor.html?id=${book.id}">
+            <span>Comece a leitura</span>
+            <img class="hero-book-icon" src="assets/figma/icon-book.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <a class="hero-book-card" href="livro.html?id=${book.id}" aria-label="Ver detalhes de ${book.title}">
+        <span class="hero-cover-frame">
+          <img src="assets/figma/hero-cover.png" alt="Capa do livro ${book.title}">
+        </span>
+        <span class="hero-card-footer">
+          <span class="hero-card-tag">${book.category}</span>
+          <span class="hero-card-link">Ver capa <img src="assets/figma/icon-magnifying.svg" alt="" aria-hidden="true"></span>
+        </span>
+      </a>
+
+      <a class="hero-scroll-button" href="#estante" aria-label="Ir para obras em destaque">
+        <img src="assets/figma/icon-caret-down.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  `;
+}
+
+function setupHeroFloatMotion() {
+  const hero = document.querySelector("[data-editorial-pick]");
+  if (!hero) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reduceMotion.matches) return;
+
+  let ticking = false;
+  const updateFloats = () => {
+    const rect = hero.getBoundingClientRect();
+    const progress = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0), 1);
+    const eased = progress - 0.5;
+    hero.style.setProperty("--float-left-y", `${eased * 42}px`);
+    hero.style.setProperty("--float-top-y", `${eased * -56}px`);
+    const buttonProgress = Math.min(Math.max((progress - 0.36) / 0.28, 0), 1);
+    hero.style.setProperty("--hero-button-y", `${buttonProgress * 68}px`);
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateFloats);
+  };
+
+  updateFloats();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+}
+
 function renderCategoryBento() {
   const target = document.querySelector("[data-category-bento]");
   if (!target) return;
@@ -639,7 +711,8 @@ async function loadBooksFromApi() {
 
 async function initApp() {
   await loadBooksFromApi();
-  renderEditorialPick();
+  renderFigmaHero();
+  setupHeroFloatMotion();
   renderFeatured();
   renderCategoryBento();
   setupSearch();
