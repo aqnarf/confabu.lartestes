@@ -557,6 +557,10 @@ h2 {
   background: transparent;
 }
 
+.book-detail > * {
+  min-width: 0;
+}
+
 .detail-panel {
   display: flex;
   flex-direction: column;
@@ -674,6 +678,7 @@ h2 {
   font-weight: 900;
   line-height: 1.02;
   letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
 .detail-note {
@@ -687,8 +692,72 @@ h2 {
   margin: 70px 0 20px;
 }
 
-.recommended-grid {
+.recommendation-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carousel-button {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fffdfa;
+  color: var(--ink);
+  font-size: 2rem;
+  font-weight: 750;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(38, 30, 21, 0.08);
+  transition: transform 180ms ease, opacity 180ms ease, background 180ms ease;
+}
+
+.carousel-button:hover {
+  transform: translateY(-2px);
+  background: #fff6e8;
+}
+
+.carousel-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+  transform: none;
+}
+
+.recommendation-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   padding-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.recommended-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(230px, 280px);
+  gap: 28px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+  padding: 2px 2px 34px;
+}
+
+.recommended-track::-webkit-scrollbar {
+  display: none;
+}
+
+.recommended-track .book-card {
+  scroll-snap-align: start;
+}
+
+.recommended-track .cover {
+  min-height: 340px;
 }
 
 .reader-shell-header {
@@ -1052,6 +1121,10 @@ h2 {
     min-height: 520px;
   }
 
+  .recommended-track {
+    grid-auto-columns: minmax(220px, 42vw);
+  }
+
   .filters {
     position: static;
   }
@@ -1081,6 +1154,31 @@ h2 {
   .book-grid,
   .book-grid.compact {
     grid-template-columns: 1fr;
+  }
+
+  .recommendation-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .recommendations .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .recommendation-actions .button {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .carousel-button {
+    flex: 1;
+    border-radius: 8px;
+  }
+
+  .recommended-track {
+    grid-auto-columns: minmax(245px, 82vw);
+    gap: 18px;
   }
 
   .editorial-cover .cover {

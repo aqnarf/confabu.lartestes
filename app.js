@@ -150,6 +150,139 @@ let books = [
       "Então vieram sons que ninguém tinha notado: folha virando, água escondida, asa passando longe.",
       "A floresta não era silenciosa. Ela só falava em outra velocidade."
     ]
+  },
+  {
+    id: "janela-para-o-mar",
+    title: "Janela para o Mar",
+    author: "Clara Vento",
+    category: "Imaginação",
+    age: "4 a 6 anos",
+    format: "Ilustrado",
+    time: "11 min",
+    featured: false,
+    colors: ["#7bc7d9", "#ffcf8a"],
+    ink: "#17354a",
+    pdfUrl: "",
+    description: "Uma janela pequena inventa ondas, conchas e faróis no meio do quarto.",
+    excerpt: [
+      "Toda tarde, Bento abria a janela e esperava o vento chegar. Quando ele vinha salgado, o quarto mudava de tamanho.",
+      "A cama virava barco, o lençol virava vela e as gavetas guardavam conchas que ninguém lembrava de ter encontrado.",
+      "Bento aprendeu que algumas viagens começam quando a gente olha demoradamente para o mesmo lugar."
+    ]
+  },
+  {
+    id: "biblioteca-dos-ventos",
+    title: "A Biblioteca dos Ventos",
+    author: "Joana Rios",
+    category: "Aventura",
+    age: "8 a 10 anos",
+    format: "Capítulos",
+    time: "20 min",
+    featured: false,
+    colors: ["#c6dcff", "#f47c64"],
+    ink: "#18244a",
+    pdfUrl: "",
+    description: "Prateleiras antigas guardam mapas que só aparecem quando o vento sopra na direção certa.",
+    excerpt: [
+      "Na biblioteca da escola, havia uma prateleira que rangia mesmo quando ninguém encostava nela.",
+      "Iara descobriu que o som era um convite: cada rangido abria um mapa novo, desenhado com poeira e luz.",
+      "Ela chamou dois amigos e, juntos, seguiram a primeira pista antes que a janela se fechasse."
+    ]
+  },
+  {
+    id: "passarinho-de-bolso",
+    title: "Passarinho de Bolso",
+    author: "Mila Duarte",
+    category: "Poesia",
+    age: "6 a 8 anos",
+    format: "Poemas",
+    time: "9 min",
+    featured: false,
+    colors: ["#ffe8a3", "#88c9a1"],
+    ink: "#2d3218",
+    pdfUrl: "",
+    description: "Poemas curtos sobre guardar coragem, segredo e canto nos bolsos da roupa.",
+    excerpt: [
+      "No bolso esquerdo mora um canto pequeno, desses que acordam antes da casa.",
+      "No bolso direito mora um segredo dobrado, com a ponta aparecendo para quem sabe olhar.",
+      "Quando caminho depressa, os dois se misturam e inventam um voo só meu."
+    ]
+  },
+  {
+    id: "domingo-de-bolo",
+    title: "Domingo de Bolo",
+    author: "Sofia Leme",
+    category: "Família",
+    age: "4 a 6 anos",
+    format: "Conto curto",
+    time: "8 min",
+    featured: false,
+    colors: ["#ffd0a6", "#b8df8e"],
+    ink: "#3f2614",
+    pdfUrl: "",
+    description: "Uma receita atravessa gerações enquanto a cozinha se enche de conversa.",
+    excerpt: [
+      "O bolo começava antes da farinha. Começava quando a avó puxava a cadeira e dizia: hoje você mede.",
+      "Cada colher tinha uma história, cada tigela guardava uma risada antiga.",
+      "Quando o cheiro ocupava a casa, ninguém precisava chamar: o domingo inteiro vinha para a mesa."
+    ]
+  },
+  {
+    id: "risada-no-varal",
+    title: "Risada no Varal",
+    author: "Duda Paes",
+    category: "Humor",
+    age: "6 a 8 anos",
+    format: "Conto curto",
+    time: "10 min",
+    featured: false,
+    colors: ["#f7a6c5", "#ffdf6e"],
+    ink: "#441c32",
+    pdfUrl: "",
+    description: "Depois de uma ventania, as roupas do varal passam a trocar de dono e de opinião.",
+    excerpt: [
+      "A camiseta listrada acordou no lugar da toalha azul e declarou que agora era cortina.",
+      "As meias fizeram assembleia no pregador vermelho. O lençol, muito importante, tentou organizar tudo.",
+      "Mas a ventania voltou rindo, e o quintal inteiro decidiu que bagunça também podia ser brincadeira."
+    ]
+  },
+  {
+    id: "rio-que-guardava-estrelas",
+    title: "O Rio que Guardava Estrelas",
+    author: "Tereza Nunes",
+    category: "Natureza",
+    age: "8 a 10 anos",
+    format: "Ilustrado",
+    time: "16 min",
+    featured: false,
+    colors: ["#174b63", "#b6e6c8"],
+    ink: "#fffaf0",
+    pdfUrl: "",
+    description: "Uma criança observa o reflexo do céu e descobre como a água conta o tempo.",
+    excerpt: [
+      "O rio parecia escuro até que Lia chegou bem perto. Então viu pequenos brilhos correndo junto com a água.",
+      "O avô explicou que o rio não prendia estrelas; ele apenas carregava lembranças do céu.",
+      "Lia ficou ali, quieta, aprendendo a ler a noite pelo movimento da correnteza."
+    ]
+  },
+  {
+    id: "caderno-das-coisas-pequenas",
+    title: "Caderno das Coisas Pequenas",
+    author: "Gabi Nolasco",
+    category: "Imaginação",
+    age: "8 a 10 anos",
+    format: "Capítulos",
+    time: "19 min",
+    featured: false,
+    colors: ["#e9d7ff", "#7fd3b4"],
+    ink: "#2f2145",
+    pdfUrl: "",
+    description: "Um caderno registra miudezas do dia até revelar que nada é pequeno quando recebe atenção.",
+    excerpt: [
+      "Lina anotava coisas que os adultos chamavam de detalhe: formiga desviando da poça, botão solto, sombra de folha.",
+      "Com o tempo, o caderno ficou cheio de acontecimentos minúsculos que pareciam conversar entre si.",
+      "Na última página, ela descobriu uma frase escrita sozinha: olhar também é inventar."
+    ]
   }
 ];
 
@@ -352,7 +485,33 @@ function recommendedBooks(currentBook) {
   const sameCategory = books.filter((book) => book.id !== currentBook.id && book.category === currentBook.category);
   const sameAge = books.filter((book) => book.id !== currentBook.id && book.age === currentBook.age && book.category !== currentBook.category);
   const remaining = books.filter((book) => book.id !== currentBook.id && !sameCategory.includes(book) && !sameAge.includes(book));
-  return [...sameCategory, ...sameAge, ...remaining].slice(0, 4);
+  return [...sameCategory, ...sameAge, ...remaining];
+}
+
+function setupRecommendationCarousel() {
+  const track = document.querySelector("[data-recommended-books]");
+  const previousButton = document.querySelector("[data-recommendation-prev]");
+  const nextButton = document.querySelector("[data-recommendation-next]");
+  if (!track || !previousButton || !nextButton) return;
+
+  const updateButtons = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    previousButton.disabled = track.scrollLeft <= 1;
+    nextButton.disabled = track.scrollLeft >= maxScroll - 1;
+  };
+
+  const scrollByPage = (direction) => {
+    track.scrollBy({
+      left: direction * Math.max(track.clientWidth * 0.85, 260),
+      behavior: "smooth"
+    });
+  };
+
+  previousButton.addEventListener("click", () => scrollByPage(-1));
+  nextButton.addEventListener("click", () => scrollByPage(1));
+  track.addEventListener("scroll", updateButtons, { passive: true });
+  window.addEventListener("resize", updateButtons);
+  updateButtons();
 }
 
 function setupBookPage() {
@@ -371,6 +530,7 @@ function setupBookPage() {
   document.querySelector("[data-book-cover]").innerHTML = coverTemplate(book);
   document.querySelector("[data-read-link]").href = `leitor.html?id=${book.id}`;
   document.querySelector("[data-recommended-books]").innerHTML = recommendedBooks(book).map(bookCard).join("");
+  setupRecommendationCarousel();
 
   const modal = document.querySelector("[data-terms-modal]");
   const termsCheck = document.querySelector("[data-terms-check]");

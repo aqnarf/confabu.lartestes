@@ -69,9 +69,15 @@
             <p class="eyebrow">Continue explorando</p>
             <h2>Outras obras recomendadas</h2>
           </div>
-          <a class="button outline" href="busca.html">Ver catálogo</a>
+          <div class="recommendation-actions">
+            <button class="carousel-button" type="button" data-recommendation-prev aria-label="Ver obras anteriores">‹</button>
+            <button class="carousel-button" type="button" data-recommendation-next aria-label="Ver próximas obras">›</button>
+            <a class="button outline" href="busca.html">Ver catálogo</a>
+          </div>
         </div>
-        <div class="book-grid recommended-grid" data-recommended-books></div>
+        <div class="recommendation-carousel">
+          <div class="recommended-track" data-recommended-books></div>
+        </div>
       </section>
     </main>
 
