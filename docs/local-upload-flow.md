@@ -6,8 +6,8 @@ Esta etapa conecta o painel `/admin` a uma persistencia local de prototipo.
 
 1. O formulario envia capa, PDF e metadados para uma server action.
 2. A action valida campos obrigatorios e tipos de arquivo.
-3. A capa e o PDF sao salvos em `public/uploads/[slug]/`.
-4. Os metadados da obra sao salvos em `.data/books.json`.
+3. A capa e o PDF sao salvos pelo provider `ASSET_STORAGE_PROVIDER`.
+4. Os metadados da obra sao salvos pelo provider `CATALOG_STORE_PROVIDER`.
 5. As rotas do acervo sao revalidadas.
 6. A obra passa a aparecer na home, na pagina individual e no leitor.
 
@@ -19,7 +19,7 @@ public/uploads/[slug]/cover.*
 public/uploads/[slug]/book.pdf
 ```
 
-Esses caminhos estao no `.gitignore`, porque sao dados de runtime e nao devem entrar no repositorio.
+Esses caminhos sao gerados quando os providers estao como `local`. Eles estao no `.gitignore`, porque sao dados de runtime e nao devem entrar no repositorio.
 
 ## Limites conhecidos
 

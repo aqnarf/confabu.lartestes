@@ -1,5 +1,5 @@
 import { mockBooks } from "@/lib/catalog/mock-books";
-import { readLocalBooks } from "@/lib/catalog/local-store";
+import { getCatalogStore } from "@/lib/catalog/store";
 import type { BookRecord, ContributorRole } from "@/lib/catalog/types";
 
 export async function listPublishedBooks(): Promise<BookRecord[]> {
@@ -24,7 +24,7 @@ export async function listBookSlugs() {
 }
 
 export async function listAllBooks(): Promise<BookRecord[]> {
-  const localBooks = await readLocalBooks();
+  const localBooks = await getCatalogStore().listBooks();
   const localSlugs = new Set(localBooks.map((book) => book.slug));
 
   return [...localBooks, ...mockBooks.filter((book) => !localSlugs.has(book.slug))];

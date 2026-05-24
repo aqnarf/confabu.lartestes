@@ -84,9 +84,12 @@ O modelo inicial de dados da obra esta documentado em `docs/data-model.md`.
 
 O fluxo local de upload do admin esta documentado em `docs/local-upload-flow.md`.
 
+O plano de persistencia de producao esta documentado em `docs/persistence-plan.md`.
+
 Proximos passos naturais:
 
-- trocar a persistencia local do admin por storage e banco de producao;
+- implementar o adapter Postgres do catalogo;
+- implementar o adapter Vercel Blob para arquivos;
 - definir o banco de dados do acervo;
 - renderizar paginas reais a partir de PDFs enviados;
 - adicionar autenticacao para `/admin`;

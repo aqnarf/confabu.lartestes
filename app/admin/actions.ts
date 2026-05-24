@@ -1,13 +1,12 @@
 "use server";
 
-import { mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
 import { revalidatePath } from "next/cache";
 
-import { readLocalBooks, saveLocalBook } from "@/lib/catalog/local-store";
 import { mockBooks } from "@/lib/catalog/mock-books";
 import { createUniqueSlug } from "@/lib/catalog/slug";
+import { getCatalogStore } from "@/lib/catalog/store";
 import type { BookRecord } from "@/lib/catalog/types";
+import { getAssetStorage } from "@/lib/storage";
 
 export type UploadBookState = {
   status: "idle" | "success" | "error";
@@ -60,23 +59,26 @@ export async function uploadBookAction(
     };
   }
 
-  const existingBooks = [...mockBooks, ...(await readLocalBooks())];
+  const catalogStore = getCatalogStore();
+  const assetStorage = getAssetStorage();
+  const existingBooks = [...mockBooks, ...(await catalogStore.listBooks())];
   const slug = createUniqueSlug(
     title,
     existingBooks.map((book) => book.slug),
   );
-  const uploadDirectory = path.join(process.cwd(), "public", "uploads", slug);
-  const publicDirectory = `/uploads/${slug}`;
-
-  await mkdir(uploadDirectory, { recursive: true });
-
-  const coverExtension = extensionForFile(coverFile, "jpg");
-  const pdfExtension = extensionForFile(pdfFile, "pdf");
-  const coverFileName = `cover.${coverExtension}`;
-  const pdfFileName = `book.${pdfExtension}`;
-
-  await writeUploadedFile(coverFile, path.join(uploadDirectory, coverFileName));
-  await writeUploadedFile(pdfFile, path.join(uploadDirectory, pdfFileName));
+  const coverAsset = await assetStorage.storeAsset({
+    file: coverFile,
+    bookSlug: slug,
+    kind: "cover",
+    preferredName: "cover",
+    altText: `Capa de ${title}.`,
+  });
+  const pdfAsset = await assetStorage.storeAsset({
+    file: pdfFile,
+    bookSlug: slug,
+    kind: "pdf",
+    preferredName: "book",
+  });
 
   const now = new Date().toISOString();
   const book: BookRecord = {
@@ -99,19 +101,19 @@ export async function uploadBookAction(
       cover: {
         id: `asset-${crypto.randomUUID()}`,
         kind: "cover",
-        url: `${publicDirectory}/${coverFileName}`,
-        altText: `Capa de ${title}.`,
-        storageKey: `local:${slug}/${coverFileName}`,
-        mimeType: coverFile.type,
-        sizeBytes: coverFile.size,
+        url: coverAsset.url,
+        altText: coverAsset.altText,
+        storageKey: coverAsset.storageKey,
+        mimeType: coverAsset.mimeType,
+        sizeBytes: coverAsset.sizeBytes,
       },
       pdf: {
         id: `asset-${crypto.randomUUID()}`,
         kind: "pdf",
-        url: `${publicDirectory}/${pdfFileName}`,
-        storageKey: `local:${slug}/${pdfFileName}`,
-        mimeType: pdfFile.type,
-        sizeBytes: pdfFile.size,
+        url: pdfAsset.url,
+        storageKey: pdfAsset.storageKey,
+        mimeType: pdfAsset.mimeType,
+        sizeBytes: pdfAsset.sizeBytes,
       },
     },
     readerPages: [
@@ -121,11 +123,11 @@ export async function uploadBookAction(
         image: {
           id: `asset-${crypto.randomUUID()}`,
           kind: "reader-page",
-          url: `${publicDirectory}/${coverFileName}`,
+          url: coverAsset.url,
           altText: `Previa visual de ${title}.`,
-          storageKey: `local:${slug}/${coverFileName}`,
-          mimeType: coverFile.type,
-          sizeBytes: coverFile.size,
+          storageKey: coverAsset.storageKey,
+          mimeType: coverAsset.mimeType,
+          sizeBytes: coverAsset.sizeBytes,
         },
         transcript: description,
       },
@@ -140,7 +142,7 @@ export async function uploadBookAction(
     publishedAt: now,
   };
 
-  await saveLocalBook(book);
+  await catalogStore.saveBook(book);
 
   revalidatePath("/");
   revalidatePath("/admin");
@@ -149,7 +151,7 @@ export async function uploadBookAction(
 
   return {
     status: "success",
-    message: "Obra publicada no catalogo local.",
+    message: "Obra publicada no catalogo.",
     slug,
   };
 }
@@ -162,19 +164,4 @@ function readText(formData: FormData, key: string) {
 function readFileInput(formData: FormData, key: string) {
   const value = formData.get(key);
   return value instanceof File && value.size > 0 ? value : undefined;
-}
-
-function extensionForFile(file: File, fallback: string) {
-  const extensionFromName = file.name.split(".").pop()?.toLowerCase();
-
-  if (extensionFromName && extensionFromName.length <= 8) {
-    return extensionFromName;
-  }
-
-  return file.type.split("/").pop() ?? fallback;
-}
-
-async function writeUploadedFile(file: File, destination: string) {
-  const bytes = await file.arrayBuffer();
-  await writeFile(destination, Buffer.from(bytes));
 }
