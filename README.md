@@ -86,8 +86,11 @@ O fluxo local de upload do admin esta documentado em `docs/local-upload-flow.md`
 
 O plano de persistencia de producao esta documentado em `docs/persistence-plan.md`.
 
+O acesso protegido do admin esta documentado em `docs/admin-auth.md`.
+
 Proximos passos naturais:
 
+- adicionar telas de termos de uso, privacidade e direitos autorais;
 - implementar o adapter Postgres do catalogo;
 - implementar o adapter Vercel Blob para arquivos;
 - definir o banco de dados do acervo;
