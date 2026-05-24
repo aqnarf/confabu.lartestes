@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getContributorLine, getPrimaryCategory, getPublishedBookBySlug, listBookSlugs } from "@/lib/books";
 
-export function generateStaticParams() {
+export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
   return listBookSlugs();
 }
 

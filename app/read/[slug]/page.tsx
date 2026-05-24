@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { ReaderShell } from "@/components/reader/reader-shell";
 import { getPublishedBookBySlug, listBookSlugs } from "@/lib/books";
 
-export function generateStaticParams() {
+export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
   return listBookSlugs();
 }
 

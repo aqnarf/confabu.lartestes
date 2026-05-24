@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { listPublishedBooks } from "@/lib/books";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const books = await listPublishedBooks();
 

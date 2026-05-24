@@ -2,14 +2,19 @@ import { BookMarked, Database, FileUp } from "lucide-react";
 
 import { UploadDropzone } from "@/components/admin/upload-dropzone";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { listPublishedBooks } from "@/lib/books";
 
-const stats = [
-  { label: "Obras no prototipo", value: "3", icon: BookMarked },
-  { label: "Fila de uploads", value: "0", icon: FileUp },
-  { label: "Storage", value: "local", icon: Database },
-];
+export const dynamic = "force-dynamic";
 
-export default function AdminPage() {
+export default async function AdminPage() {
+  const books = await listPublishedBooks();
+  const localBooks = books.filter((book) => book.assets.pdf.storageKey?.startsWith("local:"));
+  const stats = [
+    { label: "Obras publicadas", value: String(books.length), icon: BookMarked },
+    { label: "Uploads locais", value: String(localBooks.length), icon: FileUp },
+    { label: "Storage", value: "local", icon: Database },
+  ];
+
   return (
     <main className="container py-10">
       <div className="mb-8 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
@@ -17,7 +22,7 @@ export default function AdminPage() {
           <p className="text-sm font-medium uppercase tracking-[0.16em] text-primary">Painel simplificado</p>
           <h1 className="text-4xl font-semibold tracking-normal">Adicionar PDFs ilustrados sem atrito.</h1>
           <p className="text-base leading-7 text-muted-foreground">
-            Primeira versao do admin para cadastrar obra, capa e arquivo principal. A camada de persistencia pode ser conectada ao storage e banco na proxima etapa.
+            Primeira versao do admin para cadastrar obra, capa e arquivo principal em uma persistencia local de prototipo.
           </p>
         </div>
       </div>

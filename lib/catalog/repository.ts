@@ -1,20 +1,33 @@
 import { mockBooks } from "@/lib/catalog/mock-books";
+import { readLocalBooks } from "@/lib/catalog/local-store";
 import type { BookRecord, ContributorRole } from "@/lib/catalog/types";
 
 export async function listPublishedBooks(): Promise<BookRecord[]> {
-  return mockBooks
+  const books = await listAllBooks();
+
+  return books
     .filter((book) => book.status === "published")
     .sort((first, second) => first.title.localeCompare(second.title, "pt-BR"));
 }
 
 export async function getPublishedBookBySlug(slug: string): Promise<BookRecord | undefined> {
-  return mockBooks.find((book) => book.slug === slug && book.status === "published");
+  const books = await listAllBooks();
+  return books.find((book) => book.slug === slug && book.status === "published");
 }
 
-export function listBookSlugs() {
-  return mockBooks
+export async function listBookSlugs() {
+  const books = await listAllBooks();
+
+  return books
     .filter((book) => book.status === "published")
     .map((book) => ({ slug: book.slug }));
+}
+
+export async function listAllBooks(): Promise<BookRecord[]> {
+  const localBooks = await readLocalBooks();
+  const localSlugs = new Set(localBooks.map((book) => book.slug));
+
+  return [...localBooks, ...mockBooks.filter((book) => !localSlugs.has(book.slug))];
 }
 
 export function getPrimaryCategory(book: BookRecord) {

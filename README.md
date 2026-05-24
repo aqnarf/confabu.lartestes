@@ -82,9 +82,11 @@ O projeto ainda usa dados locais de prototipo em `lib/books.ts`. O painel `/admi
 
 O modelo inicial de dados da obra esta documentado em `docs/data-model.md`.
 
+O fluxo local de upload do admin esta documentado em `docs/local-upload-flow.md`.
+
 Proximos passos naturais:
 
-- conectar o cadastro do admin a storage para PDFs e capas;
+- trocar a persistencia local do admin por storage e banco de producao;
 - definir o banco de dados do acervo;
 - renderizar paginas reais a partir de PDFs enviados;
 - adicionar autenticacao para `/admin`;

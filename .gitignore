@@ -6,6 +6,8 @@ npm-debug.log*
 .next/
 out/
 dist/
+.data/
+public/uploads/
 
 *.tsbuildinfo
 .vercel/
