@@ -80,6 +80,8 @@ npm.cmd run build
 
 O projeto ainda usa dados locais de prototipo em `lib/books.ts`. O painel `/admin` ja tem a interface inicial de upload, mas ainda nao persiste arquivos nem metadados.
 
+O modelo inicial de dados da obra esta documentado em `docs/data-model.md`.
+
 Proximos passos naturais:
 
 - conectar o cadastro do admin a storage para PDFs e capas;

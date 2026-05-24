@@ -1,15 +1,15 @@
 import { notFound } from "next/navigation";
 
 import { ReaderShell } from "@/components/reader/reader-shell";
-import { books, getBook } from "@/lib/books";
+import { getPublishedBookBySlug, listBookSlugs } from "@/lib/books";
 
 export function generateStaticParams() {
-  return books.map((book) => ({ slug: book.slug }));
+  return listBookSlugs();
 }
 
 export default async function ReadPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const book = getBook(slug);
+  const book = await getPublishedBookBySlug(slug);
 
   if (!book) {
     notFound();

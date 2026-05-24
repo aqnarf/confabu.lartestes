@@ -41,11 +41,17 @@ export function PageFlipReader({ pages }: { pages: ReaderPage[] }) {
             className="flex h-full flex-col overflow-hidden bg-card text-card-foreground"
           >
             <div className="relative flex-1 bg-muted">
-              <Image src={page.imageUrl} alt={page.alt} fill className="object-cover" sizes="480px" />
+              <Image
+                src={page.image.url}
+                alt={page.image.altText ?? `Pagina ${page.order}`}
+                fill
+                className="object-cover"
+                sizes="480px"
+              />
             </div>
             <div className="min-h-28 border-t bg-card p-5">
               <p className="text-xs font-medium uppercase tracking-[0.14em] text-primary">Pagina {index + 1}</p>
-              <p className="mt-2 text-base leading-7">{page.text}</p>
+              <p className="mt-2 text-base leading-7">{page.transcript}</p>
             </div>
           </article>
         ))}

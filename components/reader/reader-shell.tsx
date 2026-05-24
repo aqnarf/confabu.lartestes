@@ -33,10 +33,10 @@ export function ReaderShell({ book }: { book: Book }) {
       </div>
 
       <div className="container">
-        {accessibleMode ? <AccessibleScrollReader pages={book.pages} /> : <PageFlipReader pages={book.pages} />}
+        {accessibleMode ? <AccessibleScrollReader pages={book.readerPages} /> : <PageFlipReader pages={book.readerPages} />}
         <div className="mx-auto flex max-w-3xl justify-center pb-10">
           <Button asChild variant="outline">
-            <a href={book.pdfUrl}>Abrir PDF original</a>
+            <a href={book.assets.pdf.url}>Abrir PDF original</a>
           </Button>
         </div>
       </div>

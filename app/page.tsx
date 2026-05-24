@@ -3,9 +3,11 @@ import { Search, SlidersHorizontal } from "lucide-react";
 import { BookCard } from "@/components/book-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { books } from "@/lib/books";
+import { listPublishedBooks } from "@/lib/books";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const books = await listPublishedBooks();
+
   return (
     <main>
       <section className="border-b bg-card">

@@ -6,34 +6,42 @@ import { BookOpen, Download, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { books, getBook } from "@/lib/books";
+import { getContributorLine, getPrimaryCategory, getPublishedBookBySlug, listBookSlugs } from "@/lib/books";
 
 export function generateStaticParams() {
-  return books.map((book) => ({ slug: book.slug }));
+  return listBookSlugs();
 }
 
 export default async function BookDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const book = getBook(slug);
+  const book = await getPublishedBookBySlug(slug);
 
   if (!book) {
     notFound();
   }
 
+  const category = getPrimaryCategory(book);
+  const contributorLine = getContributorLine(book);
+
   return (
     <main className="container grid gap-8 py-10 lg:grid-cols-[360px_1fr]">
       <div className="relative aspect-[4/5] overflow-hidden rounded-lg border bg-muted shadow-sm">
-        <Image src={book.coverUrl} alt={`Capa de ${book.title}`} fill className="object-cover" priority sizes="360px" />
+        <Image
+          src={book.assets.cover.url}
+          alt={book.assets.cover.altText ?? `Capa de ${book.title}`}
+          fill
+          className="object-cover"
+          priority
+          sizes="360px"
+        />
       </div>
 
       <section className="space-y-6">
         <div className="space-y-4">
-          <Badge variant="secondary">{book.category}</Badge>
+          <Badge variant="secondary">{category}</Badge>
           <div className="space-y-3">
             <h1 className="text-4xl font-semibold tracking-normal">{book.title}</h1>
-            <p className="text-lg text-muted-foreground">
-              {book.author} · ilustracoes de {book.illustrator}
-            </p>
+            <p className="text-lg text-muted-foreground">{contributorLine}</p>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted-foreground">{book.description}</p>
         </div>
@@ -46,7 +54,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <a href={book.pdfUrl}>
+            <a href={book.assets.pdf.url}>
               <Download className="size-4" />
               Baixar PDF
             </a>
@@ -60,7 +68,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
               Informacoes editoriais
             </CardTitle>
           </CardHeader>
-          <CardContent className="grid gap-4 text-sm sm:grid-cols-3">
+          <CardContent className="grid gap-4 text-sm sm:grid-cols-4">
             <div>
               <p className="font-medium">Faixa etaria</p>
               <p className="text-muted-foreground">{book.ageRange}</p>
@@ -72,6 +80,10 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
             <div>
               <p className="font-medium">Leitura</p>
               <p className="text-muted-foreground">Page flip ou rolagem</p>
+            </div>
+            <div>
+              <p className="font-medium">Direitos</p>
+              <p className="text-muted-foreground">{book.rights.licenseLabel}</p>
             </div>
           </CardContent>
         </Card>
