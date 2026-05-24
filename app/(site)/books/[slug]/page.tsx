@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen, Download, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 
+import { BookLegalActions } from "@/components/legal/book-legal-actions";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getContributorLine, getPrimaryCategory, getPublishedBookBySlug, listBookSlugs } from "@/lib/books";
 
@@ -48,20 +47,7 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
           <p className="max-w-2xl text-base leading-8 text-muted-foreground">{book.description}</p>
         </div>
 
-        <div className="flex flex-wrap gap-3">
-          <Button asChild size="lg">
-            <Link href={`/read/${book.slug}`}>
-              <BookOpen className="size-4" />
-              Abrir leitor
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <a href={book.assets.pdf.url}>
-              <Download className="size-4" />
-              Baixar PDF
-            </a>
-          </Button>
-        </div>
+        <BookLegalActions book={book} />
 
         <Card>
           <CardHeader>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { ReaderLegalGate } from "@/components/legal/reader-legal-gate";
 import { ReaderShell } from "@/components/reader/reader-shell";
 import { getPublishedBookBySlug, listBookSlugs } from "@/lib/books";
 
@@ -17,5 +18,9 @@ export default async function ReadPage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
-  return <ReaderShell book={book} />;
+  return (
+    <ReaderLegalGate book={book}>
+      <ReaderShell book={book} />
+    </ReaderLegalGate>
+  );
 }
