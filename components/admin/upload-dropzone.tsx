@@ -15,6 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 type UploadState = {
   pdf?: File;
   cover?: File;
+  backCover?: File;
 };
 
 const initialState: UploadBookState = {
@@ -35,7 +36,7 @@ export function UploadDropzone() {
     <Card>
       <CardContent className="p-6">
         <form action={formAction} className="grid gap-6">
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 lg:grid-cols-3">
             <FileInput
               id="pdf"
               name="pdf"
@@ -53,6 +54,15 @@ export function UploadDropzone() {
               accept="image/png,image/jpeg,image/webp"
               icon={<ImagePlus className="size-5" />}
               onChange={(file) => setFiles((current) => ({ ...current, cover: file }))}
+            />
+            <FileInput
+              id="backCover"
+              name="backCover"
+              title="Contracapa (opcional)"
+              description={files.backCover?.name ?? "Imagem do verso para visualização em giro"}
+              accept="image/png,image/jpeg,image/webp"
+              icon={<ImagePlus className="size-5" />}
+              onChange={(file) => setFiles((current) => ({ ...current, backCover: file }))}
             />
           </div>
 

@@ -5,10 +5,18 @@ import { revalidatePath } from "next/cache";
 import { mockBooks } from "@/lib/catalog/mock-books";
 import { createUniqueSlug } from "@/lib/catalog/slug";
 import { getCatalogStore } from "@/lib/catalog/store";
-import type { BookRecord } from "@/lib/catalog/types";
+import type { BookAsset, BookRecord } from "@/lib/catalog/types";
+import { getPublishedBookBySlug } from "@/lib/books";
 import { getAssetStorage } from "@/lib/storage";
+import type { StoredAsset } from "@/lib/storage/types";
 
 export type UploadBookState = {
+  status: "idle" | "success" | "error";
+  message: string;
+  slug?: string;
+};
+
+export type UpdateBookImagesState = {
   status: "idle" | "success" | "error";
   message: string;
   slug?: string;
@@ -29,6 +37,7 @@ export async function uploadBookAction(
     .map((tag) => tag.trim())
     .filter(Boolean);
   const coverFile = readFileInput(formData, "cover");
+  const backCoverFile = readFileInput(formData, "backCover");
   const pdfFile = readFileInput(formData, "pdf");
 
   if (!title || !author || !ageRange || !category || !description) {
@@ -59,6 +68,13 @@ export async function uploadBookAction(
     };
   }
 
+  if (backCoverFile && !backCoverFile.type.startsWith("image/")) {
+    return {
+      status: "error",
+      message: "A contracapa precisa ser uma imagem.",
+    };
+  }
+
   const catalogStore = getCatalogStore();
   const assetStorage = getAssetStorage();
   const existingBooks = [...mockBooks, ...(await catalogStore.listBooks())];
@@ -79,6 +95,15 @@ export async function uploadBookAction(
     kind: "pdf",
     preferredName: "book",
   });
+  const backCoverAsset = backCoverFile
+    ? await assetStorage.storeAsset({
+        file: backCoverFile,
+        bookSlug: slug,
+        kind: "back-cover",
+        preferredName: "back-cover",
+        altText: `Contracapa de ${title}.`,
+      })
+    : undefined;
 
   const now = new Date().toISOString();
   const book: BookRecord = {
@@ -99,21 +124,11 @@ export async function uploadBookAction(
     ],
     assets: {
       cover: {
-        id: `asset-${crypto.randomUUID()}`,
-        kind: "cover",
-        url: coverAsset.url,
-        altText: coverAsset.altText,
-        storageKey: coverAsset.storageKey,
-        mimeType: coverAsset.mimeType,
-        sizeBytes: coverAsset.sizeBytes,
+        ...toBookAsset(coverAsset, "cover"),
       },
+      ...(backCoverAsset ? { backCover: toBookAsset(backCoverAsset, "back-cover") } : {}),
       pdf: {
-        id: `asset-${crypto.randomUUID()}`,
-        kind: "pdf",
-        url: pdfAsset.url,
-        storageKey: pdfAsset.storageKey,
-        mimeType: pdfAsset.mimeType,
-        sizeBytes: pdfAsset.sizeBytes,
+        ...toBookAsset(pdfAsset, "pdf"),
       },
     },
     readerPages: [
@@ -156,6 +171,77 @@ export async function uploadBookAction(
   };
 }
 
+export async function updateBookImagesAction(
+  _previousState: UpdateBookImagesState,
+  formData: FormData,
+): Promise<UpdateBookImagesState> {
+  const slug = readText(formData, "slug");
+  const coverFile = readFileInput(formData, "replacementCover");
+  const backCoverFile = readFileInput(formData, "replacementBackCover");
+
+  if (!slug) {
+    return { status: "error", message: "Selecione uma obra para atualizar." };
+  }
+
+  if (!coverFile && !backCoverFile) {
+    return { status: "error", message: "Selecione uma nova capa ou contracapa." };
+  }
+
+  if ((coverFile && !coverFile.type.startsWith("image/")) || (backCoverFile && !backCoverFile.type.startsWith("image/"))) {
+    return { status: "error", message: "Capa e contracapa precisam ser imagens." };
+  }
+
+  const book = await getPublishedBookBySlug(slug);
+
+  if (!book) {
+    return { status: "error", message: "A obra selecionada não foi encontrada." };
+  }
+
+  const assetStorage = getAssetStorage();
+  const catalogStore = getCatalogStore();
+  const coverAsset = coverFile
+    ? await assetStorage.storeAsset({
+        file: coverFile,
+        bookSlug: slug,
+        kind: "cover",
+        preferredName: "cover",
+        altText: `Capa de ${book.title}.`,
+      })
+    : undefined;
+  const backCoverAsset = backCoverFile
+    ? await assetStorage.storeAsset({
+        file: backCoverFile,
+        bookSlug: slug,
+        kind: "back-cover",
+        preferredName: "back-cover",
+        altText: `Contracapa de ${book.title}.`,
+      })
+    : undefined;
+
+  const updatedBook: BookRecord = {
+    ...book,
+    assets: {
+      ...book.assets,
+      ...(coverAsset ? { cover: toBookAsset(coverAsset, "cover") } : {}),
+      ...(backCoverAsset ? { backCover: toBookAsset(backCoverAsset, "back-cover") } : {}),
+    },
+    updatedAt: new Date().toISOString(),
+  };
+
+  await catalogStore.saveBook(updatedBook);
+
+  revalidatePath("/");
+  revalidatePath("/admin");
+  revalidatePath(`/books/${slug}`);
+  revalidatePath(`/read/${slug}`);
+
+  return {
+    status: "success",
+    message: "Imagens da obra atualizadas.",
+    slug,
+  };
+}
+
 function readText(formData: FormData, key: string) {
   const value = formData.get(key);
   return typeof value === "string" ? value.trim() : "";
@@ -164,4 +250,16 @@ function readText(formData: FormData, key: string) {
 function readFileInput(formData: FormData, key: string) {
   const value = formData.get(key);
   return value instanceof File && value.size > 0 ? value : undefined;
+}
+
+function toBookAsset(asset: StoredAsset, kind: BookAsset["kind"]): BookAsset {
+  return {
+    id: `asset-${crypto.randomUUID()}`,
+    kind,
+    url: asset.url,
+    altText: asset.altText,
+    storageKey: asset.storageKey,
+    mimeType: asset.mimeType,
+    sizeBytes: asset.sizeBytes,
+  };
 }

@@ -1,6 +1,7 @@
 import { BookMarked, Database, FileUp } from "lucide-react";
 
 import { UploadDropzone } from "@/components/admin/upload-dropzone";
+import { BookImageEditor } from "@/components/admin/book-image-editor";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { listPublishedBooks } from "@/lib/books";
 
@@ -42,6 +43,15 @@ export default async function AdminPage() {
       </div>
 
       <UploadDropzone />
+      <div className="mt-6">
+        <BookImageEditor
+          books={books.map((book) => ({
+            slug: book.slug,
+            title: book.title,
+            hasBackCover: Boolean(book.assets.backCover),
+          }))}
+        />
+      </div>
     </main>
   );
 }

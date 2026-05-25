@@ -32,41 +32,69 @@ export function BookLegalActions({ book }: { book: Book }) {
   }
 
   return (
-    <div className="space-y-4">
-      {book.rights.requireTermsAcceptance ? (
-        <label className="flex gap-3 rounded-lg border bg-card p-4 text-sm leading-6">
-          <input
-            type="checkbox"
-            className="mt-1 size-4 accent-primary"
-            checked={accepted}
-            onChange={(event) => handleAcceptanceChange(event.target.checked)}
-          />
-          <span>
-            {legalAcceptanceText} <LegalLinks />
-          </span>
-        </label>
-      ) : null}
+    <div className="space-y-6">
+      <section className="space-y-2 bg-[#f4f4f5] p-6 text-[#52525b]" aria-label="Uso da obra">
+        <h2 className="text-base font-semibold leading-6 text-[#3f3f46]">Uso da obra</h2>
+        <p className="text-sm leading-5">
+          Leitura online livre. Download permitido para uso educacional, pessoal e não comercial, conforme os termos de uso e
+          direitos autorais.
+        </p>
+        <div className="flex flex-wrap gap-4 text-sm font-semibold text-[#312e81] underline">
+          <Link href="/termos">Termos de Uso</Link>
+          <Link href="/aviso-legal">Direitos autorais</Link>
+        </div>
+        {book.rights.requireTermsAcceptance ? (
+          <label className="mt-4 flex gap-3 border-t border-[#d4d4d8] pt-4 text-sm leading-5">
+            <input
+              type="checkbox"
+              className="mt-0.5 size-4 accent-[#c8b2f2]"
+              checked={accepted}
+              onChange={(event) => handleAcceptanceChange(event.target.checked)}
+            />
+            <span>
+              {legalAcceptanceText} <LegalLinks className="[&_a]:text-[#312e81]" />
+            </span>
+          </label>
+        ) : null}
+      </section>
 
-      <div className="flex flex-wrap gap-3">
-        <Button asChild size="lg" aria-disabled={!canReadOrDownload} className={!canReadOrDownload ? "pointer-events-none opacity-50" : undefined}>
-          <Link href={`/read/${book.slug}`}>
-            <BookOpen className="size-4" />
-            Abrir leitor
-          </Link>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          aria-disabled={!canReadOrDownload || !book.rights.allowDownload}
-          className={!canReadOrDownload || !book.rights.allowDownload ? "pointer-events-none opacity-50" : undefined}
-        >
-          <a href={book.assets.pdf.url} download>
-            <Download className="size-4" />
-            Baixar PDF
-          </a>
-        </Button>
-      </div>
+      <section className="space-y-4" aria-label="Disponibilidade">
+        <p className="text-sm leading-5 text-[#3f3f46]">Disponibilidade</p>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            asChild
+            aria-disabled={!canReadOrDownload}
+            className="h-10 rounded-full bg-[#c8b2f2] px-4 text-base font-semibold text-[#171026] hover:bg-[#b89be9]"
+          >
+            <Link
+              href={`/read/${book.slug}`}
+              className={!canReadOrDownload ? "pointer-events-none opacity-50" : undefined}
+            >
+              Ler online
+              <BookOpen className="size-5" />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            aria-disabled={!canReadOrDownload || !book.rights.allowDownload}
+            className="h-10 rounded-full border-2 border-[#c8b2f2] px-4 text-base font-semibold text-[#171026] hover:bg-[#c8b2f2]"
+          >
+            <a
+              href={book.assets.pdf.url}
+              download
+              className={!canReadOrDownload || !book.rights.allowDownload ? "pointer-events-none opacity-50" : undefined}
+            >
+              Baixar livro
+              <Download className="size-5" />
+            </a>
+          </Button>
+        </div>
+        <p className="text-xs leading-[18px] text-[#52525b]">
+          Leitura online livre. Download permitido para uso educacional, pessoal e não comercial, conforme os termos de uso e
+          direitos autorais.
+        </p>
+      </section>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { PublicHeader } from "@/components/site/public-header";
 
 export default function SiteLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className="public-theme min-h-screen overflow-x-hidden">
+    <div className="public-theme min-h-screen overflow-x-clip">
       <PublicHeader />
       {children}
       <footer className="border-t bg-background">

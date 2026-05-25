@@ -2,7 +2,7 @@ export type BookStatus = "draft" | "published" | "archived";
 
 export type ContributorRole = "author" | "illustrator" | "editor" | "translator";
 
-export type AssetKind = "cover" | "pdf" | "reader-page";
+export type AssetKind = "cover" | "back-cover" | "pdf" | "reader-page";
 
 export type BookAsset = {
   id: string;
@@ -47,6 +47,7 @@ export type BookRecord = {
   contributors: BookContributor[];
   assets: {
     cover: BookAsset;
+    backCover?: BookAsset;
     pdf: BookAsset;
   };
   readerPages: ReaderPage[];
