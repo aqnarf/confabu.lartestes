@@ -1,4 +1,7 @@
 import type { BookRecord, ReaderPage } from "@/lib/catalog/types";
+import previewBooksData from "@/lib/catalog/preview-books.json";
+
+const previewBooks = previewBooksData as BookRecord[];
 
 const demoPages: ReaderPage[] = [
   {
@@ -39,9 +42,68 @@ const demoPages: ReaderPage[] = [
   },
 ];
 
+const jardimPageImages = [
+  {
+    url: "/assets/figma/home-hero-image.png",
+    altText: "Galho ilustrado sob um céu azul com uma joaninha.",
+    mimeType: "image/png",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1400&q=80",
+    altText: "Caminho entre árvores com luz de manhã.",
+    mimeType: "image/jpeg",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1400&q=80",
+    altText: "Livro aberto sobre uma mesa com luz suave.",
+    mimeType: "image/jpeg",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?auto=format&fit=crop&w=1400&q=80",
+    altText: "Criança lendo em um canto tranquilo.",
+    mimeType: "image/jpeg",
+  },
+] as const;
+
+const jardimPages: ReaderPage[] = [
+  "Era uma vez uma pergunta que acordou antes de todo mundo.",
+  "Ela morava num quintal pequeno, bem debaixo da janela.",
+  "Naquela manhã, o vento trouxe uma semente redonda e luminosa.",
+  "A menina plantou a semente sem saber qual resposta nasceria.",
+  "No dia seguinte, havia uma folha em forma de ponto de interrogação.",
+  "A primeira flor perguntou por que as joaninhas usam pintinhas.",
+  "A segunda quis saber onde a chuva descansa quando o céu fica azul.",
+  "Logo o quintal estava cheio de perguntas coloridas.",
+  "Algumas eram grandes e alcançavam os galhos mais altos.",
+  "Outras falavam baixinho e cabiam no bolso do vestido.",
+  "A menina aprendeu que nem toda pergunta precisa florescer depressa.",
+  "Ela regava as dúvidas com histórias, risadas e silêncio.",
+  "Um passarinho levou uma pergunta para além do muro.",
+  "Do outro lado, outra criança encontrou a flor e sorriu.",
+  "Assim, o jardim cresceu sem cerca e sem fim.",
+  "E toda manhã havia lugar para uma nova pergunta.",
+].map((transcript, index) => {
+  const image = jardimPageImages[index % jardimPageImages.length];
+  const pageNumber = index + 1;
+
+  return {
+    id: `jardim-page-${pageNumber}`,
+    order: pageNumber,
+    image: {
+      id: `asset-jardim-page-${pageNumber}`,
+      kind: "reader-page",
+      url: image.url,
+      altText: image.altText,
+      mimeType: image.mimeType,
+    },
+    transcript,
+  };
+});
+
 const publishedAt = "2026-05-23T00:00:00.000Z";
 
 export const mockBooks: BookRecord[] = [
+  ...previewBooks,
   {
     id: "book-jardim-das-perguntas",
     slug: "jardim-das-perguntas",
@@ -72,7 +134,7 @@ export const mockBooks: BookRecord[] = [
         mimeType: "application/pdf",
       },
     },
-    readerPages: demoPages,
+    readerPages: jardimPages,
     rights: {
       licenseLabel: "Uso educacional mediante aceite dos termos",
       allowDownload: true,

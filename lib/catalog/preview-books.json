@@ -1,0 +1,739 @@
+[
+  {
+    "id": "book-espera-real",
+    "slug": "espera-real",
+    "status": "published",
+    "title": "Espera",
+    "description": "Uma obra ilustrada sobre o intervalo entre o que fazemos agora e aquilo que ainda pode florescer.",
+    "language": "pt-BR",
+    "ageRange": "Leitura livre",
+    "categories": [
+      "Livro ilustrado"
+    ],
+    "tags": [
+      "espera",
+      "natureza",
+      "literatura ilustrada"
+    ],
+    "contributors": [
+      {
+        "id": "espera-author",
+        "name": "Renata Kalid",
+        "role": "author"
+      },
+      {
+        "id": "espera-illustrator-1",
+        "name": "Yuri Vieira",
+        "role": "illustrator"
+      },
+      {
+        "id": "espera-illustrator-2",
+        "name": "Gabriel Medina",
+        "role": "illustrator"
+      }
+    ],
+    "assets": {
+      "cover": {
+        "id": "asset-espera-cover",
+        "kind": "cover",
+        "url": "/assets/books/espera-real/cover.webp",
+        "altText": "Capa do livro Espera.",
+        "storageKey": "local:espera-real/cover.webp",
+        "mimeType": "image/webp"
+      },
+      "backCover": {
+        "id": "asset-espera-back-cover",
+        "kind": "back-cover",
+        "url": "/assets/books/espera-real/back-cover.webp",
+        "altText": "Contracapa do livro Espera.",
+        "storageKey": "local:espera-real/back-cover.webp",
+        "mimeType": "image/webp"
+      },
+      "pdf": {
+        "id": "asset-espera-pdf",
+        "kind": "pdf",
+        "url": "/assets/books/espera-real/espera.pdf",
+        "storageKey": "local:espera-real/espera.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 9977136
+      }
+    },
+    "readerPages": [
+      {
+        "id": "espera-page-001",
+        "order": 1,
+        "image": {
+          "id": "asset-espera-page-001",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/cover.webp",
+          "altText": "Página 1 de Espera.",
+          "storageKey": "local:espera-real/cover.webp",
+          "mimeType": "image/webp",
+          "transcript": "Espera, de Renata Kalid."
+        },
+        "transcript": "Espera, de Renata Kalid."
+      },
+      {
+        "id": "espera-page-002",
+        "order": 2,
+        "image": {
+          "id": "asset-espera-page-002",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-002.webp",
+          "altText": "Página 2 de Espera.",
+          "storageKey": "local:espera-real/pages/page-002.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-003",
+        "order": 3,
+        "image": {
+          "id": "asset-espera-page-003",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-003.webp",
+          "altText": "Página 3 de Espera.",
+          "storageKey": "local:espera-real/pages/page-003.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-004",
+        "order": 4,
+        "image": {
+          "id": "asset-espera-page-004",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-004.webp",
+          "altText": "Página 4 de Espera.",
+          "storageKey": "local:espera-real/pages/page-004.webp",
+          "mimeType": "image/webp",
+          "transcript": "ESPERA\n© da edição Laboratório de Projetos Editoriais, 2024.2\n© do texto Renata Kalid, 2024.2\n© das ilustrações, Yuri Vieira e Gabriel Medina, 2024.2\n© do projeto editorial, Diogo França, 2024.2\nEsse livro é produto da A3 da UC Informação e Projeto \nGráfi co, da turma 2024.2, do Curso de Graduação em \nDesign, da Ânima Live, desenvolvido sob orientação dos \nprofessores Renata Kalid, André Mucarzel e Pablo.\n1ª edição. 1ª publicação. Dezembro. 2024\nTodos os direitos reservados. Esta é uma edição não \ncomercial da obra Espera, não podendo ser repro-\nduzido, no todo ou partes, armazenado em sistemas \neletrônicos, ou transmitidos por nenhuma forma ou \nmeio eletrônico, mecânico ou outros sem autorização \nprévia, por escrito, do autor e equipe que participou do \nprojeto gráfi co e editorial.\nOs direitos de imagem pertencem aos ilustradores \nYuri Vieria,  ,Gabriel Medina. \nOs direitos do texto pertencem a autora Renata Kalid."
+        },
+        "transcript": "ESPERA\n© da edição Laboratório de Projetos Editoriais, 2024.2\n© do texto Renata Kalid, 2024.2\n© das ilustrações, Yuri Vieira e Gabriel Medina, 2024.2\n© do projeto editorial, Diogo França, 2024.2\nEsse livro é produto da A3 da UC Informação e Projeto \nGráfi co, da turma 2024.2, do Curso de Graduação em \nDesign, da Ânima Live, desenvolvido sob orientação dos \nprofessores Renata Kalid, André Mucarzel e Pablo.\n1ª edição. 1ª publicação. Dezembro. 2024\nTodos os direitos reservados. Esta é uma edição não \ncomercial da obra Espera, não podendo ser repro-\nduzido, no todo ou partes, armazenado em sistemas \neletrônicos, ou transmitidos por nenhuma forma ou \nmeio eletrônico, mecânico ou outros sem autorização \nprévia, por escrito, do autor e equipe que participou do \nprojeto gráfi co e editorial.\nOs direitos de imagem pertencem aos ilustradores \nYuri Vieria,  ,Gabriel Medina. \nOs direitos do texto pertencem a autora Renata Kalid."
+      },
+      {
+        "id": "espera-page-005",
+        "order": 5,
+        "image": {
+          "id": "asset-espera-page-005",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-005.webp",
+          "altText": "Página 5 de Espera.",
+          "storageKey": "local:espera-real/pages/page-005.webp",
+          "mimeType": "image/webp",
+          "transcript": "RENATA KALID\nILUSTRAÇÃO\nYURI VIEIRA &\nGABRIEL MEDINA"
+        },
+        "transcript": "RENATA KALID\nILUSTRAÇÃO\nYURI VIEIRA &\nGABRIEL MEDINA"
+      },
+      {
+        "id": "espera-page-006",
+        "order": 6,
+        "image": {
+          "id": "asset-espera-page-006",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-006.webp",
+          "altText": "Página 6 de Espera.",
+          "storageKey": "local:espera-real/pages/page-006.webp",
+          "mimeType": "image/webp",
+          "transcript": "A todos que cultivam \na esperança."
+        },
+        "transcript": "A todos que cultivam \na esperança."
+      },
+      {
+        "id": "espera-page-007",
+        "order": 7,
+        "image": {
+          "id": "asset-espera-page-007",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-007.webp",
+          "altText": "Página 7 de Espera.",
+          "storageKey": "local:espera-real/pages/page-007.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-008",
+        "order": 8,
+        "image": {
+          "id": "asset-espera-page-008",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-008.webp",
+          "altText": "Página 8 de Espera.",
+          "storageKey": "local:espera-real/pages/page-008.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-009",
+        "order": 9,
+        "image": {
+          "id": "asset-espera-page-009",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-009.webp",
+          "altText": "Página 9 de Espera.",
+          "storageKey": "local:espera-real/pages/page-009.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-010",
+        "order": 10,
+        "image": {
+          "id": "asset-espera-page-010",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-010.webp",
+          "altText": "Página 10 de Espera.",
+          "storageKey": "local:espera-real/pages/page-010.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-011",
+        "order": 11,
+        "image": {
+          "id": "asset-espera-page-011",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-011.webp",
+          "altText": "Página 11 de Espera.",
+          "storageKey": "local:espera-real/pages/page-011.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-012",
+        "order": 12,
+        "image": {
+          "id": "asset-espera-page-012",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-012.webp",
+          "altText": "Página 12 de Espera.",
+          "storageKey": "local:espera-real/pages/page-012.webp",
+          "mimeType": "image/webp",
+          "transcript": "ESPERA\nESPERA\nEspera"
+        },
+        "transcript": "ESPERA\nESPERA\nEspera"
+      },
+      {
+        "id": "espera-page-013",
+        "order": 13,
+        "image": {
+          "id": "asset-espera-page-013",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-013.webp",
+          "altText": "Página 13 de Espera.",
+          "storageKey": "local:espera-real/pages/page-013.webp",
+          "mimeType": "image/webp",
+          "transcript": "é um presente\nemprenhado de futuro.\nO inexato intervalo\nentre o feito de agora e o\nq\nu\ne\nve\nm\nd\ne\np\nois,\nd\ne\nd\ne\np\noi\ns,\nd\ne\nd\ne\np\no\nis\n.\né um presente\nemprenhado de futuro.\nO inexato intervalo\nentre o feito de agora e o\nq\nu\ne\nu\ne\nu\nve\nve\nv\nm\ne\nm\ne\nd\ne\nd\ne\nd\np\ne\np\ne\no\np\no\np\nis,\nd\ne\nd\ne\np\noi\ns,\nd\ne\nd\ne\nd\nd\ne\nd\ne\nd\np\ne\np\ne\no\np\no\np\ni\no\ni\no\nsisi .\né um presente\nemprenhado de futuro.\nO inexato intervalo\nentre o feito de agora\ne o\nqu\ne v\nem\nde\npo\nis,\nd\ne\nd\ne\np\no\ni\ns\n,\nd\ne\nd\ne\np\no\ni\ns\n."
+        },
+        "transcript": "é um presente\nemprenhado de futuro.\nO inexato intervalo\nentre o feito de agora e o\nq\nu\ne\nve\nm\nd\ne\np\nois,\nd\ne\nd\ne\np\noi\ns,\nd\ne\nd\ne\np\no\nis\n.\né um presente\nemprenhado de futuro.\nO inexato intervalo\nentre o feito de agora e o\nq\nu\ne\nu\ne\nu\nve\nve\nv\nm\ne\nm\ne\nd\ne\nd\ne\nd\np\ne\np\ne\no\np\no\np\nis,\nd\ne\nd\ne\np\noi\ns,\nd\ne\nd\ne\nd\nd\ne\nd\ne\nd\np\ne\np\ne\no\np\no\np\ni\no\ni\no\nsisi .\né um presente\nemprenhado de futuro.\nO inexato intervalo\nentre o feito de agora\ne o\nqu\ne v\nem\nde\npo\nis,\nd\ne\nd\ne\np\no\ni\ns\n,\nd\ne\nd\ne\np\no\ni\ns\n."
+      },
+      {
+        "id": "espera-page-014",
+        "order": 14,
+        "image": {
+          "id": "asset-espera-page-014",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-014.webp",
+          "altText": "Página 14 de Espera.",
+          "storageKey": "local:espera-real/pages/page-014.webp",
+          "mimeType": "image/webp",
+          "transcript": "Assim toda espera \ncarece de verbo \npara vingar.\nSem o feito de agora, \nnão há que se pensar"
+        },
+        "transcript": "Assim toda espera \ncarece de verbo \npara vingar.\nSem o feito de agora, \nnão há que se pensar"
+      },
+      {
+        "id": "espera-page-015",
+        "order": 15,
+        "image": {
+          "id": "asset-espera-page-015",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-015.webp",
+          "altText": "Página 15 de Espera.",
+          "storageKey": "local:espera-real/pages/page-015.webp",
+          "mimeType": "image/webp",
+          "transcript": "no depois."
+        },
+        "transcript": "no depois."
+      },
+      {
+        "id": "espera-page-016",
+        "order": 16,
+        "image": {
+          "id": "asset-espera-page-016",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-016.webp",
+          "altText": "Página 16 de Espera.",
+          "storageKey": "local:espera-real/pages/page-016.webp",
+          "mimeType": "image/webp",
+          "transcript": "É um passo\nque vai se aprumando\nando,\nando,\nando,\naté\nchegar lá.\nEspera não é a parada,\né o própiro caminho.\nEspera é gerúndio,\nque é um jeito de esticar o tempo\ne pré(encher) todo o espaço que \nmora \nentre um verbo e outro, \ne outro,\ne outro,"
+        },
+        "transcript": "É um passo\nque vai se aprumando\nando,\nando,\nando,\naté\nchegar lá.\nEspera não é a parada,\né o própiro caminho.\nEspera é gerúndio,\nque é um jeito de esticar o tempo\ne pré(encher) todo o espaço que \nmora \nentre um verbo e outro, \ne outro,\ne outro,"
+      },
+      {
+        "id": "espera-page-017",
+        "order": 17,
+        "image": {
+          "id": "asset-espera-page-017",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-017.webp",
+          "altText": "Página 17 de Espera.",
+          "storageKey": "local:espera-real/pages/page-017.webp",
+          "mimeType": "image/webp",
+          "transcript": "Espera é \nresiliência."
+        },
+        "transcript": "Espera é \nresiliência."
+      },
+      {
+        "id": "espera-page-018",
+        "order": 18,
+        "image": {
+          "id": "asset-espera-page-018",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-018.webp",
+          "altText": "Página 18 de Espera.",
+          "storageKey": "local:espera-real/pages/page-018.webp",
+          "mimeType": "image/webp",
+          "transcript": "Por exemplo\nespera é o que brota \ndo verbo plantar\nO que se planta \né coisa que só frutifi ca \nadiante"
+        },
+        "transcript": "Por exemplo\nespera é o que brota \ndo verbo plantar\nO que se planta \né coisa que só frutifi ca \nadiante"
+      },
+      {
+        "id": "espera-page-019",
+        "order": 19,
+        "image": {
+          "id": "asset-espera-page-019",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-019.webp",
+          "altText": "Página 19 de Espera.",
+          "storageKey": "local:espera-real/pages/page-019.webp",
+          "mimeType": "image/webp",
+          "transcript": "P\nr\no\nb\ne\nm\ne\np\nr\no\nm\na\nl\nq\nu\ne\né\np\nr\na\ng\na\nr\na\nn\nt\nir\na\ni\nn\nt\ne\nir\ne\nz\na\nd\na\ns\nco\nis\nas"
+        },
+        "transcript": "P\nr\no\nb\ne\nm\ne\np\nr\no\nm\na\nl\nq\nu\ne\né\np\nr\na\ng\na\nr\na\nn\nt\nir\na\ni\nn\nt\ne\nir\ne\nz\na\nd\na\ns\nco\nis\nas"
+      },
+      {
+        "id": "espera-page-020",
+        "order": 20,
+        "image": {
+          "id": "asset-espera-page-020",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-020.webp",
+          "altText": "Página 20 de Espera.",
+          "storageKey": "local:espera-real/pages/page-020.webp",
+          "mimeType": "image/webp",
+          "transcript": "Tecer também é verbo \nem estado de espera,\ncosturado com fi os de paciência.\nCarece do tempo e da espera\nde quem (ter)sido\nse veste."
+        },
+        "transcript": "Tecer também é verbo \nem estado de espera,\ncosturado com fi os de paciência.\nCarece do tempo e da espera\nde quem (ter)sido\nse veste."
+      },
+      {
+        "id": "espera-page-021",
+        "order": 21,
+        "image": {
+          "id": "asset-espera-page-021",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-021.webp",
+          "altText": "Página 21 de Espera.",
+          "storageKey": "local:espera-real/pages/page-021.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-022",
+        "order": 22,
+        "image": {
+          "id": "asset-espera-page-022",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-022.webp",
+          "altText": "Página 22 de Espera.",
+          "storageKey": "local:espera-real/pages/page-022.webp",
+          "mimeType": "image/webp",
+          "transcript": "Já gestar, é a espera em si\npara então se estender \nao outro,\nao outro,\nao outro."
+        },
+        "transcript": "Já gestar, é a espera em si\npara então se estender \nao outro,\nao outro,\nao outro."
+      },
+      {
+        "id": "espera-page-023",
+        "order": 23,
+        "image": {
+          "id": "asset-espera-page-023",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-023.webp",
+          "altText": "Página 23 de Espera.",
+          "storageKey": "local:espera-real/pages/page-023.webp",
+          "mimeType": "image/webp",
+          "transcript": "É\npr\nol\no\ng\na\nm\nen\nto\nde\nte\nmp\no.\nE\nn\nã\no\nc\no\nn\nf\nu\nn\nd\na\n,\nn\nu\nn\nc\na\n..\n.\nes\npera n\não\né\nte\nm\np\no\nq\nu\ne\ne\ns\nta\nnca\n."
+        },
+        "transcript": "É\npr\nol\no\ng\na\nm\nen\nto\nde\nte\nmp\no.\nE\nn\nã\no\nc\no\nn\nf\nu\nn\nd\na\n,\nn\nu\nn\nc\na\n..\n.\nes\npera n\não\né\nte\nm\np\no\nq\nu\ne\ne\ns\nta\nnca\n."
+      },
+      {
+        "id": "espera-page-024",
+        "order": 24,
+        "image": {
+          "id": "asset-espera-page-024",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-024.webp",
+          "altText": "Página 24 de Espera.",
+          "storageKey": "local:espera-real/pages/page-024.webp",
+          "mimeType": "image/webp",
+          "transcript": "É palavra-bicho, \nesperança.\nÉ palavra que voa, \nesper(ar).\nÉ palavra que caminha, \nesper(ando).\nA espera se pretende de tempo,\nnão lugar."
+        },
+        "transcript": "É palavra-bicho, \nesperança.\nÉ palavra que voa, \nesper(ar).\nÉ palavra que caminha, \nesper(ando).\nA espera se pretende de tempo,\nnão lugar."
+      },
+      {
+        "id": "espera-page-025",
+        "order": 25,
+        "image": {
+          "id": "asset-espera-page-025",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-025.webp",
+          "altText": "Página 25 de Espera.",
+          "storageKey": "local:espera-real/pages/page-025.webp",
+          "mimeType": "image/webp",
+          "transcript": "Semente, por exemplo,\né a infância do tempo\nque só esperando\nbrota."
+        },
+        "transcript": "Semente, por exemplo,\né a infância do tempo\nque só esperando\nbrota."
+      },
+      {
+        "id": "espera-page-026",
+        "order": 26,
+        "image": {
+          "id": "asset-espera-page-026",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-026.webp",
+          "altText": "Página 26 de Espera.",
+          "storageKey": "local:espera-real/pages/page-026.webp",
+          "mimeType": "image/webp",
+          "transcript": "Eu mesma, tenho tido fé de esperar.\nNão de braços cruzados.\nMas, à disposição\ndas funduras da vida."
+        },
+        "transcript": "Eu mesma, tenho tido fé de esperar.\nNão de braços cruzados.\nMas, à disposição\ndas funduras da vida."
+      },
+      {
+        "id": "espera-page-027",
+        "order": 27,
+        "image": {
+          "id": "asset-espera-page-027",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-027.webp",
+          "altText": "Página 27 de Espera.",
+          "storageKey": "local:espera-real/pages/page-027.webp",
+          "mimeType": "image/webp",
+          "transcript": "cuidando,ando,a\nndo.\nN\nã\no\ne\nsp\ner\no\nte\nm\np\no\nbo\nm"
+        },
+        "transcript": "cuidando,ando,a\nndo.\nN\nã\no\ne\nsp\ner\no\nte\nm\np\no\nbo\nm"
+      },
+      {
+        "id": "espera-page-028",
+        "order": 28,
+        "image": {
+          "id": "asset-espera-page-028",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-028.webp",
+          "altText": "Página 28 de Espera.",
+          "storageKey": "local:espera-real/pages/page-028.webp",
+          "mimeType": "image/webp",
+          "transcript": "Acredito mesmo, \ne rezo até para que \nbem quereres \nde diferentes espécies, \nbrotem lá no fundo de mim\njá que no raso \né dado a variar de opinião \nmuito em razão do vento \nque sopra \ne leva \ne releva, \ncom uma facilidade \nsobre humana."
+        },
+        "transcript": "Acredito mesmo, \ne rezo até para que \nbem quereres \nde diferentes espécies, \nbrotem lá no fundo de mim\njá que no raso \né dado a variar de opinião \nmuito em razão do vento \nque sopra \ne leva \ne releva, \ncom uma facilidade \nsobre humana."
+      },
+      {
+        "id": "espera-page-029",
+        "order": 29,
+        "image": {
+          "id": "asset-espera-page-029",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-029.webp",
+          "altText": "Página 29 de Espera.",
+          "storageKey": "local:espera-real/pages/page-029.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-030",
+        "order": 30,
+        "image": {
+          "id": "asset-espera-page-030",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-030.webp",
+          "altText": "Página 30 de Espera.",
+          "storageKey": "local:espera-real/pages/page-030.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-031",
+        "order": 31,
+        "image": {
+          "id": "asset-espera-page-031",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-031.webp",
+          "altText": "Página 31 de Espera.",
+          "storageKey": "local:espera-real/pages/page-031.webp",
+          "mimeType": "image/webp",
+          "transcript": "Acredito mesmo \nque, quintal bom \nde se ter em casa,\ne em lembrança,\ndeve aconchegar quereres \nde todo jeito, que é para \nnunca acostumar \nos sentidos."
+        },
+        "transcript": "Acredito mesmo \nque, quintal bom \nde se ter em casa,\ne em lembrança,\ndeve aconchegar quereres \nde todo jeito, que é para \nnunca acostumar \nos sentidos."
+      },
+      {
+        "id": "espera-page-032",
+        "order": 32,
+        "image": {
+          "id": "asset-espera-page-032",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-032.webp",
+          "altText": "Página 32 de Espera.",
+          "storageKey": "local:espera-real/pages/page-032.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-033",
+        "order": 33,
+        "image": {
+          "id": "asset-espera-page-033",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-033.webp",
+          "altText": "Página 33 de Espera.",
+          "storageKey": "local:espera-real/pages/page-033.webp",
+          "mimeType": "image/webp",
+          "transcript": "E, só mais uma coisinha:\nnão acredito fácil no ditado que diz \nque quem espera sempre alcança."
+        },
+        "transcript": "E, só mais uma coisinha:\nnão acredito fácil no ditado que diz \nque quem espera sempre alcança."
+      },
+      {
+        "id": "espera-page-034",
+        "order": 34,
+        "image": {
+          "id": "asset-espera-page-034",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-034.webp",
+          "altText": "Página 34 de Espera.",
+          "storageKey": "local:espera-real/pages/page-034.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-035",
+        "order": 35,
+        "image": {
+          "id": "asset-espera-page-035",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-035.webp",
+          "altText": "Página 35 de Espera.",
+          "storageKey": "local:espera-real/pages/page-035.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-036",
+        "order": 36,
+        "image": {
+          "id": "asset-espera-page-036",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-036.webp",
+          "altText": "Página 36 de Espera.",
+          "storageKey": "local:espera-real/pages/page-036.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-037",
+        "order": 37,
+        "image": {
+          "id": "asset-espera-page-037",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-037.webp",
+          "altText": "Página 37 de Espera.",
+          "storageKey": "local:espera-real/pages/page-037.webp",
+          "mimeType": "image/webp",
+          "transcript": "Espera\né um continuado \nexercício \nda possibiliade, \ninsistência \ne cuidados,"
+        },
+        "transcript": "Espera\né um continuado \nexercício \nda possibiliade, \ninsistência \ne cuidados,"
+      },
+      {
+        "id": "espera-page-038",
+        "order": 38,
+        "image": {
+          "id": "asset-espera-page-038",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-038.webp",
+          "altText": "Página 38 de Espera.",
+          "storageKey": "local:espera-real/pages/page-038.webp",
+          "mimeType": "image/webp",
+          "transcript": ""
+        },
+        "transcript": ""
+      },
+      {
+        "id": "espera-page-039",
+        "order": 39,
+        "image": {
+          "id": "asset-espera-page-039",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-039.webp",
+          "altText": "Página 39 de Espera.",
+          "storageKey": "local:espera-real/pages/page-039.webp",
+          "mimeType": "image/webp",
+          "transcript": "que quando escassa,\nnão brota."
+        },
+        "transcript": "que quando escassa,\nnão brota."
+      },
+      {
+        "id": "espera-page-040",
+        "order": 40,
+        "image": {
+          "id": "asset-espera-page-040",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-040.webp",
+          "altText": "Página 40 de Espera.",
+          "storageKey": "local:espera-real/pages/page-040.webp",
+          "mimeType": "image/webp",
+          "transcript": "RENATA KALID - autora\nPós-Graduanda em O Livro Para a Infância - Processos \nContemporâneos de Criação, Circulação e Mediação, \npela A Casa Tombada/SP. Pós-graduada em Compu-\ntação Gráfica pela Universidade Salvador, graduada \nem Comunicação Social pela Universidade Católica \nde Salvador e em Direito pela Universidade Federal da \nBahia (1999). Docente nos cursos de graduação na área \nde Design e Comunicação, da UNIFACS e ÂNIMA Digital. \nSócia-proprietaria da Designametro - Escritório de \nArte. Experiência na área de Design e Comunicação - \ncom ênfase em Publicidade e Propaganda.\nDiogo França \nUI e UX Designer e faz de tudo nas horas vagas \n@aqnarf\nCaíque Silva Alves\nIlustrador, design gráfico freelancer, estudante de \ndesign gráfico, programador e maratonista. \n@caique_alves.28\nEnzo Pereira Souza \nIlustrador e Estudante de Design. Apreciador da cultura \ngeek e um aficionado por café e doces \n@enzosouza0404\nYuri Camargo Vieira  \nIlustrador, estudante de design e animação, ama ver \ncartoons, comics e tem uma paixão por \npássaros e dinossauros \n@yucolor_art\nRogelio S. Martinez \nDesigner com foco em marcas. Ilustrador, animador e \ncriador de sites.\n@uxroge\nGabriel Medina  \nSurfista e desenhista autodidata (viciado em estética) \ncursando o terceiro período da faculdade de design \n@g.medina.l"
+        },
+        "transcript": "RENATA KALID - autora\nPós-Graduanda em O Livro Para a Infância - Processos \nContemporâneos de Criação, Circulação e Mediação, \npela A Casa Tombada/SP. Pós-graduada em Compu-\ntação Gráfica pela Universidade Salvador, graduada \nem Comunicação Social pela Universidade Católica \nde Salvador e em Direito pela Universidade Federal da \nBahia (1999). Docente nos cursos de graduação na área \nde Design e Comunicação, da UNIFACS e ÂNIMA Digital. \nSócia-proprietaria da Designametro - Escritório de \nArte. Experiência na área de Design e Comunicação - \ncom ênfase em Publicidade e Propaganda.\nDiogo França \nUI e UX Designer e faz de tudo nas horas vagas \n@aqnarf\nCaíque Silva Alves\nIlustrador, design gráfico freelancer, estudante de \ndesign gráfico, programador e maratonista. \n@caique_alves.28\nEnzo Pereira Souza \nIlustrador e Estudante de Design. Apreciador da cultura \ngeek e um aficionado por café e doces \n@enzosouza0404\nYuri Camargo Vieira  \nIlustrador, estudante de design e animação, ama ver \ncartoons, comics e tem uma paixão por \npássaros e dinossauros \n@yucolor_art\nRogelio S. Martinez \nDesigner com foco em marcas. Ilustrador, animador e \ncriador de sites.\n@uxroge\nGabriel Medina  \nSurfista e desenhista autodidata (viciado em estética) \ncursando o terceiro período da faculdade de design \n@g.medina.l"
+      },
+      {
+        "id": "espera-page-041",
+        "order": 41,
+        "image": {
+          "id": "asset-espera-page-041",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/pages/page-041.webp",
+          "altText": "Página 41 de Espera.",
+          "storageKey": "local:espera-real/pages/page-041.webp",
+          "mimeType": "image/webp",
+          "transcript": "Capa dura 350gm². Miolo, em papel couchê 170gm².  \nTipografia de corpo para a narrativa, Singlet. \nTipografia de apoio, Amelia Basic.\nImpresso na ..."
+        },
+        "transcript": "Capa dura 350gm². Miolo, em papel couchê 170gm².  \nTipografia de corpo para a narrativa, Singlet. \nTipografia de apoio, Amelia Basic.\nImpresso na ..."
+      },
+      {
+        "id": "espera-page-042",
+        "order": 42,
+        "image": {
+          "id": "asset-espera-page-042",
+          "kind": "reader-page",
+          "url": "/assets/books/espera-real/back-cover.webp",
+          "altText": "Página 42 de Espera.",
+          "storageKey": "local:espera-real/back-cover.webp",
+          "mimeType": "image/webp",
+          "transcript": "Contracapa de Espera."
+        },
+        "transcript": "Contracapa de Espera."
+      }
+    ],
+    "rights": {
+      "licenseLabel": "Termos de Uso e Direitos Autorais",
+      "allowDownload": true,
+      "requireTermsAcceptance": true
+    },
+    "createdAt": "2026-05-25T21:01:31.254003Z",
+    "updatedAt": "2026-05-25T21:01:31.254003Z",
+    "publishedAt": "2026-05-25T21:01:31.254003Z"
+  },
+  {
+    "id": "book-c2712076-6470-424a-b5b7-08952d3e5484",
+    "slug": "teste",
+    "status": "published",
+    "title": "Teste",
+    "description": "Não dá",
+    "language": "pt-BR",
+    "ageRange": "Não pode",
+    "categories": [
+      "Uma muito interessante"
+    ],
+    "tags": [
+      "Não tem"
+    ],
+    "contributors": [
+      {
+        "id": "contributor-487a77e5-6362-44a6-8207-5fec42f7adf7",
+        "name": "Eu mesmo",
+        "role": "author"
+      },
+      {
+        "id": "contributor-286d6b7c-e126-48c8-a392-bcc19f2434f1",
+        "name": "Um cabra aí",
+        "role": "illustrator"
+      }
+    ],
+    "assets": {
+      "cover": {
+        "id": "asset-994f583a-ab71-4043-bccb-3e8f8e049fce",
+        "kind": "cover",
+        "url": "/assets/books/teste/cover.jpg",
+        "altText": "Capa de Teste.",
+        "storageKey": "local:teste/cover.jpg",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 43241
+      },
+      "pdf": {
+        "id": "asset-ad1a44b0-d2d5-497d-93c5-1bac53b0d07c",
+        "kind": "pdf",
+        "url": "/assets/books/teste/book.pdf",
+        "storageKey": "local:teste/book.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 184509
+      },
+      "backCover": {
+        "id": "asset-0e7ba0ff-d4e0-4031-8e21-80adfe10117f",
+        "kind": "back-cover",
+        "url": "/assets/books/teste/back-cover.jpg",
+        "altText": "Contracapa de Teste.",
+        "storageKey": "local:teste/back-cover.jpg",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 17055
+      }
+    },
+    "readerPages": [
+      {
+        "id": "page-00104f36-8c21-46e2-a929-273fba6c258e",
+        "order": 1,
+        "image": {
+          "id": "asset-97a175ec-5112-48b7-b57f-7fccaad725c7",
+          "kind": "reader-page",
+          "url": "/assets/books/teste/cover.jpg",
+          "altText": "Previa visual de Teste.",
+          "storageKey": "local:teste/cover.jpg",
+          "mimeType": "image/jpeg",
+          "sizeBytes": 43241
+        },
+        "transcript": "Não dá"
+      }
+    ],
+    "rights": {
+      "licenseLabel": "Uso educacional mediante aceite dos termos",
+      "allowDownload": true,
+      "requireTermsAcceptance": true
+    },
+    "createdAt": "2026-05-24T01:10:41.211Z",
+    "updatedAt": "2026-05-25T20:19:31.000Z",
+    "publishedAt": "2026-05-24T01:10:41.211Z"
+  }
+]
