@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const sora = Sora({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "confabu.lab biblioteca",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body className={inter.variable}>
+      <body className={sora.variable}>
         {children}
       </body>
     </html>
