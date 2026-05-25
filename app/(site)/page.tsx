@@ -27,7 +27,7 @@ export default async function HomePage() {
               <span className="rounded-xl bg-[#c8b2f2] px-3 py-1 text-[#171026]">Ilustração por</span>
               <span className="rounded-xl bg-[#171026] px-3 py-1 text-[#c8b2f2]">Fulano da Silva</span>
             </div>
-            <div className="absolute right-8 top-0 h-[120px] w-20 overflow-hidden border-8 border-white bg-[#171026]">
+            <div className="absolute right-8 top-0 h-[160px] w-20 overflow-hidden bg-[#35130f]">
               <div className="absolute bottom-[-40px] right-[-48px] flex h-[137px] w-[175px] items-center justify-center">
                 <div className="-scale-y-100 rotate-180">
                   <Image
@@ -102,13 +102,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#f4f4f5] px-4 py-8 lg:px-16">
+      <section className="bg-background px-4 py-8 lg:px-16">
         <div className="flex w-full flex-col gap-8">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <h2 className="max-w-full text-2xl font-semibold leading-8 text-[#18181b] lg:text-[32px] lg:leading-10">Confira as últimas novidades</h2>
             <Link
               href="#acervo"
-              className="rounded-2xl border-2 border-[#c8b2f2] bg-white px-4 py-2 text-base font-semibold leading-6 text-[#171026] transition-colors hover:bg-[#c8b2f2]"
+              className="px-4 py-2 text-base font-semibold leading-6 text-[#171026] underline decoration-1 underline-offset-2 transition-colors hover:text-[#583c79]"
             >
               Ver acervo completo
             </Link>

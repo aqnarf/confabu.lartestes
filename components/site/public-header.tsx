@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { BookOpen, UploadCloud } from "lucide-react";
+import { UploadCloud } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -65,17 +65,16 @@ export function PublicHeader() {
         }}
       >
         <div className="flex w-full items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2 font-semibold tracking-normal">
+          <Link href="/" aria-label="Confabu.lar - ir para o acervo">
             <span
-              className={cn(
-                "flex size-9 items-center justify-center bg-primary text-primary-foreground transition-[border-radius]",
-                "header-motion duration-500",
-                isFloating ? "rounded-full" : "rounded-md",
-              )}
-            >
-              <BookOpen className="size-5" />
-            </span>
-            <span>confabu.lab</span>
+              aria-hidden="true"
+              className="block h-10 w-[116px] bg-[#35130f]"
+              style={{
+                WebkitMask:
+                  "url('/assets/figma/confabulab-logo.svg') center / contain no-repeat",
+                mask: "url('/assets/figma/confabulab-logo.svg') center / contain no-repeat",
+              }}
+            />
           </Link>
           <nav className="flex items-center gap-2">
             <Button asChild variant="ghost" size="sm" className={cn(isFloating && "rounded-full")}>

@@ -9,7 +9,7 @@ export function BookCard({ book }: { book: Book }) {
   return (
     <Link
       href={`/books/${book.slug}`}
-      className="group flex min-h-[456px] min-w-0 flex-col overflow-hidden bg-background transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="group flex min-h-[456px] min-w-0 flex-col overflow-hidden bg-[#f4f4f5] transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
     >
       <div className="relative flex h-[360px] items-center justify-center overflow-hidden px-6 py-14">
         <div className="relative size-full">
