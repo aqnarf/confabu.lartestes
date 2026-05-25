@@ -26,7 +26,7 @@ export function ReaderShell({ book }: { book: Book }) {
             <Switch id="reader-mode" checked={accessibleMode} onCheckedChange={setAccessibleMode} />
             <Label htmlFor="reader-mode" className="flex items-center gap-2">
               <Rows3 className="size-4" />
-              Rolagem acessivel
+              Rolagem acessível
             </Label>
           </div>
         </div>

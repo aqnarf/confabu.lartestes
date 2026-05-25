@@ -10,14 +10,14 @@ export function AccessibleScrollReader({ pages }: { pages: ReaderPage[] }) {
           <div className="relative aspect-[4/3] bg-muted">
             <Image
               src={page.image.url}
-              alt={page.image.altText ?? `Pagina ${page.order}`}
+              alt={page.image.altText ?? `Página ${page.order}`}
               fill
               className="object-cover"
               sizes="(min-width: 768px) 760px, 94vw"
             />
           </div>
           <div className="space-y-2 p-5">
-            <p className="text-sm font-medium text-primary">Pagina {index + 1}</p>
+            <p className="text-sm font-medium text-primary">Página {index + 1}</p>
             <p className="text-lg leading-8">{page.transcript}</p>
           </div>
         </article>

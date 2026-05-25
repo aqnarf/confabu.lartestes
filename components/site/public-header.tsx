@@ -54,7 +54,7 @@ export function PublicHeader() {
         aria-hidden={isFloating && !isVisible}
         inert={isFloating && !isVisible}
         className={cn(
-          "fixed left-1/2 z-40 flex -translate-x-1/2 items-center border-b bg-background/90 px-4 backdrop-blur transition-[width,top,height,border-radius,box-shadow,opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          "header-motion fixed left-1/2 z-40 flex -translate-x-1/2 items-center border-b bg-background/90 px-4 backdrop-blur transition-[width,top,height,border-radius,box-shadow,opacity,transform] duration-500",
           isFloating
             ? "top-4 h-14 rounded-full border bg-background/95 px-3 shadow-[0_12px_32px_rgba(23,16,38,0.12)]"
             : "top-0 h-16 rounded-none",
@@ -69,7 +69,7 @@ export function PublicHeader() {
             <span
               className={cn(
                 "flex size-9 items-center justify-center bg-primary text-primary-foreground transition-[border-radius]",
-                "duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                "header-motion duration-500",
                 isFloating ? "rounded-full" : "rounded-md",
               )}
             >

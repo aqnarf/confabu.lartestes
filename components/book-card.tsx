@@ -24,7 +24,7 @@ export function BookCard({ book }: { book: Book }) {
       </div>
       <div className="flex flex-1 flex-col justify-end gap-1 p-6">
         <h2 className="line-clamp-2 text-[18px] font-semibold leading-[26px] text-[#3f3f46]">{book.title}</h2>
-        <p className="truncate text-sm leading-5 text-[#52525b]">{authors || "Autoria em revisao"}</p>
+        <p className="truncate text-sm leading-5 text-[#52525b]">{authors || "Autoria em revisão"}</p>
       </div>
     </Link>
   );

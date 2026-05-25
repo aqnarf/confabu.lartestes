@@ -45,8 +45,8 @@ export function getContributorLine(book: BookRecord) {
   const illustrators = getContributorNames(book, "illustrator").join(", ");
 
   if (authors && illustrators) {
-    return `${authors} - ilustracoes de ${illustrators}`;
+    return `${authors} - ilustrações de ${illustrators}`;
   }
 
-  return authors || illustrators || "Autoria em revisao";
+  return authors || illustrators || "Autoria em revisão";
 }

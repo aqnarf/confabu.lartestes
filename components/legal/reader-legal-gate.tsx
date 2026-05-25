@@ -40,7 +40,7 @@ export function ReaderLegalGate({ book, children }: { book: Book; children: Reac
         <div className="mt-5 space-y-3">
           <h1 className="text-2xl font-semibold tracking-normal">Antes de abrir o leitor</h1>
           <p className="leading-7 text-muted-foreground">
-            Para ler <strong className="font-semibold text-foreground">{book.title}</strong>, confirme que voce leu e concorda com os documentos legais da biblioteca.
+            Para ler <strong className="font-semibold text-foreground">{book.title}</strong>, confirme que você leu e concorda com os documentos legais da biblioteca.
           </p>
           <p className="text-sm leading-6 text-muted-foreground">
             {legalAcceptanceText} <LegalLinks />

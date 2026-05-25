@@ -90,6 +90,8 @@ O acesso protegido do admin esta documentado em `docs/admin-auth.md`.
 
 O fluxo legal de termos e aceite esta documentado em `docs/legal-flow.md`.
 
+A direcao visual publica e a proposta futura do hero estao documentadas em `docs/public-visual-roadmap.md`.
+
 Proximos passos naturais:
 
 - implementar o adapter Postgres do catalogo;

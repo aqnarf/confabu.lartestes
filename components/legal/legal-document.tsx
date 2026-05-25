@@ -33,15 +33,15 @@ export function LegalDocumentPage({ document }: { document: LegalDocument }) {
 
       <div className="mt-10 rounded-lg border bg-card p-5 text-sm text-muted-foreground">
         <p>
-          Estes textos foram adaptados dos documentos fornecidos pelo projeto. Antes de publicacao definitiva, recomenda-se
-          revisao juridica e preenchimento de dados institucionais finais.
+          Estes textos foram adaptados dos documentos fornecidos pelo projeto. Antes de publicação definitiva, recomenda-se
+          revisão jurídica e preenchimento de dados institucionais finais.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link href="/termos" className="font-medium text-primary">
             Termos de Uso
           </Link>
           <Link href="/privacidade" className="font-medium text-primary">
-            Politica de Privacidade
+            Política de Privacidade
           </Link>
           <Link href="/aviso-legal" className="font-medium text-primary">
             Aviso Legal

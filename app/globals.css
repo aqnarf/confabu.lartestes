@@ -58,6 +58,15 @@
     --ring: 260 65% 82%;
   }
 
+  .public-theme ::selection {
+    background: #c8b2f2;
+    color: #171026;
+  }
+
+  .header-motion {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
   .shelf-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }

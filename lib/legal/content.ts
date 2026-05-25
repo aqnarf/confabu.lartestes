@@ -13,99 +13,99 @@ export type LegalDocument = {
 export const siteName = "confabu.lab biblioteca";
 
 export const termsDocument: LegalDocument = {
-  title: "Termos e condicoes de uso",
+  title: "Termos e condições de uso",
   intro:
-    "Este termo regula o acesso e uso da biblioteca virtual, em conformidade com a legislacao vigente, especialmente a Lei 9.610/1998, a Lei 12.965/2014 e o Codigo Civil Brasileiro.",
+    "Este termo regula o acesso e uso da biblioteca virtual, em conformidade com a legislação vigente, especialmente a Lei 9.610/1998, a Lei 12.965/2014 e o Código Civil Brasileiro.",
   sections: [
     {
-      title: "Aceitacao dos termos",
-      paragraphs: ["Ao acessar o site, o usuario declara ter lido, compreendido e aceitado integralmente as disposicoes deste termo."],
+      title: "Aceitação dos termos",
+      paragraphs: ["Ao acessar o site, o usuário declara ter lido, compreendido e aceitado integralmente as disposições deste termo."],
     },
     {
       title: "Objeto",
       paragraphs: [
-        "O site disponibiliza obras intelectuais de terceiros, mediante autorizacao expressa de seus respectivos autores, exclusivamente para leitura online e sem finalidade lucrativa.",
+        "O site disponibiliza obras intelectuais de terceiros, mediante autorização expressa de seus respectivos autores, exclusivamente para leitura online e sem finalidade lucrativa.",
       ],
     },
     {
       title: "Direitos autorais",
       paragraphs: [
-        "Todo o conteudo disponibilizado encontra-se protegido pela legislacao de direitos autorais, sendo vedada qualquer utilizacao nao autorizada, nos termos da Lei 9.610/1998.",
+        "Todo o conteúdo disponibilizado encontra-se protegido pela legislação de direitos autorais, sendo vedada qualquer utilização não autorizada, nos termos da Lei 9.610/1998.",
       ],
     },
     {
       title: "Limitacoes de uso",
-      paragraphs: ["E expressamente proibido ao usuario:"],
+      paragraphs: ["É expressamente proibido ao usuário:"],
       items: [
-        "reproduzir, copiar, distribuir ou divulgar o conteudo sem autorizacao;",
-        "realizar armazenamento ou compartilhamento externo nao autorizado;",
-        "utilizar o conteudo para fins comerciais ou publicos sem permissao;",
+        "reproduzir, copiar, distribuir ou divulgar o conteúdo sem autorização;",
+        "realizar armazenamento ou compartilhamento externo não autorizado;",
+        "utilizar o conteúdo para fins comerciais ou públicos sem permissão;",
         "violar direitos autorais ou de propriedade intelectual.",
       ],
     },
     {
-      title: "Responsabilidade do usuario",
+      title: "Responsabilidade do usuário",
       paragraphs: [
-        "O usuario compromete-se a utilizar o site de forma etica e legal, responsabilizando-se por qualquer violacao a legislacao vigente.",
+        "O usuário compromete-se a utilizar o site de forma ética e legal, responsabilizando-se por qualquer violação à legislação vigente.",
       ],
     },
     {
-      title: "Remocao de conteudo",
+      title: "Remoção de conteúdo",
       paragraphs: [
-        "Nos termos do Marco Civil da Internet, o site podera remover conteudos mediante notificacao de violacao de direitos autorais, garantindo o contraditorio quando aplicavel.",
+        "Nos termos do Marco Civil da Internet, o site poderá remover conteúdos mediante notificação de violação de direitos autorais, garantindo o contraditório quando aplicável.",
       ],
     },
     {
-      title: "Limitacao de responsabilidade",
+      title: "Limitação de responsabilidade",
       paragraphs: [
-        "O site atua como disponibilizador de conteudo autorizado e nao se responsabiliza por usos indevidos realizados por usuarios.",
+        "O site atua como disponibilizador de conteúdo autorizado e não se responsabiliza por usos indevidos realizados por usuários.",
       ],
     },
     {
-      title: "Disposicoes gerais",
-      paragraphs: ["Este termo podera ser alterado a qualquer tempo, mediante publicacao atualizada no site."],
+      title: "Disposições gerais",
+      paragraphs: ["Este termo poderá ser alterado a qualquer tempo, mediante publicação atualizada no site."],
     },
   ],
 };
 
 export const privacyDocument: LegalDocument = {
-  title: "Politica de privacidade",
+  title: "Política de privacidade",
   intro:
-    "Este documento informa como dados pessoais dos usuarios podem ser coletados, utilizados e protegidos no ambito da biblioteca virtual, em conformidade com a Lei 13.709/2018.",
+    "Este documento informa como dados pessoais dos usuários podem ser coletados, utilizados e protegidos no âmbito da biblioteca virtual, em conformidade com a Lei 13.709/2018.",
   sections: [
     {
       title: "Coleta de dados",
-      paragraphs: ["O site podera coletar dados fornecidos pelo usuario e dados de navegacao necessarios ao funcionamento da plataforma."],
-      items: ["nome e e-mail, quando fornecidos pelo usuario;", "IP, cookies e informacoes tecnicas de navegacao."],
+      paragraphs: ["O site poderá coletar dados fornecidos pelo usuário e dados de navegação necessários ao funcionamento da plataforma."],
+      items: ["nome e e-mail, quando fornecidos pelo usuário;", "IP, cookies e informações técnicas de navegação."],
     },
     {
       title: "Finalidade do tratamento",
       paragraphs: ["Os dados coletados destinam-se a:"],
       items: [
         "garantir o funcionamento do site;",
-        "melhorar a experiencia do usuario;",
-        "atender obrigacoes legais e regulatorias.",
+        "melhorar a experiência do usuário;",
+        "atender obrigações legais e regulatórias.",
       ],
     },
     {
       title: "Base legal",
-      paragraphs: ["O tratamento de dados e realizado com fundamento no consentimento do usuario e no legitimo interesse, conforme a LGPD."],
+      paragraphs: ["O tratamento de dados é realizado com fundamento no consentimento do usuário e no legítimo interesse, conforme a LGPD."],
     },
     {
       title: "Compartilhamento de dados",
-      paragraphs: ["Os dados nao serao comercializados e poderao ser compartilhados apenas quando necessario para cumprimento legal ou ordem judicial."],
+      paragraphs: ["Os dados não serão comercializados e poderão ser compartilhados apenas quando necessário para cumprimento legal ou ordem judicial."],
     },
     {
       title: "Direitos do titular",
-      paragraphs: ["Nos termos da LGPD, o usuario podera solicitar acesso, correcao ou exclusao de seus dados, revogar consentimento e obter informacoes sobre o tratamento."],
+      paragraphs: ["Nos termos da LGPD, o usuário poderá solicitar acesso, correção ou exclusão de seus dados, revogar consentimento e obter informações sobre o tratamento."],
     },
     {
-      title: "Seguranca da informacao",
-      paragraphs: ["O site adota medidas tecnicas e administrativas para protecao dos dados pessoais."],
+      title: "Segurança da informação",
+      paragraphs: ["O site adota medidas técnicas e administrativas para proteção dos dados pessoais."],
     },
     {
       title: "Contato",
-      paragraphs: ["Para exercer seus direitos, o usuario podera entrar em contato pelo canal indicado pelo projeto."],
+      paragraphs: ["Para exercer seus direitos, o usuário poderá entrar em contato pelo canal indicado pelo projeto."],
     },
   ],
 };
@@ -113,28 +113,28 @@ export const privacyDocument: LegalDocument = {
 export const legalNoticeDocument: LegalDocument = {
   title: "Aviso legal",
   intro:
-    "A biblioteca virtual atua exclusivamente como plataforma de disponibilizacao de conteudo literario mediante autorizacao de seus respectivos autores.",
+    "A biblioteca virtual atua exclusivamente como plataforma de disponibilização de conteúdo literário mediante autorização de seus respectivos autores.",
   sections: [
     {
-      title: "Protecao das obras",
+      title: "Proteção das obras",
       paragraphs: [
-        "Todo o conteudo disponibilizado e protegido pela Lei 9.610/1998, sendo vedada sua reproducao, distribuicao ou qualquer forma de utilizacao nao autorizada.",
+        "Todo o conteúdo disponibilizado é protegido pela Lei 9.610/1998, sendo vedada sua reprodução, distribuição ou qualquer forma de utilização não autorizada.",
       ],
     },
     {
-      title: "Finalidade nao comercial",
+      title: "Finalidade não comercial",
       paragraphs: [
-        "O site nao realiza exploracao comercial das obras e nao se responsabiliza por eventuais usos indevidos praticados por usuarios.",
+        "O site não realiza exploração comercial das obras e não se responsabiliza por eventuais usos indevidos praticados por usuários.",
       ],
     },
     {
-      title: "Solicitacao de remocao",
+      title: "Solicitação de remoção",
       paragraphs: [
-        "Caso algum titular de direitos entenda que seu conteudo foi disponibilizado de forma indevida, podera solicitar a remocao por meio do canal de contato do projeto.",
+        "Caso algum titular de direitos entenda que seu conteúdo foi disponibilizado de forma indevida, poderá solicitar a remoção por meio do canal de contato do projeto.",
       ],
     },
   ],
 };
 
 export const legalAcceptanceText =
-  "Li e concordo com os Termos de Uso, a Politica de Privacidade e o Aviso Legal da biblioteca.";
+  "Li e concordo com os Termos de Uso, a Política de Privacidade e o Aviso Legal da biblioteca.";

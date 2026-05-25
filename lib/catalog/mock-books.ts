@@ -20,7 +20,7 @@ const demoPages: ReaderPage[] = [
       id: "asset-page-2",
       kind: "reader-page",
       url: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=900&q=80",
-      altText: "Caminho entre arvores com luz de manha.",
+      altText: "Caminho entre árvores com luz de manhã.",
       mimeType: "image/jpeg",
     },
     transcript: "Ela atravessou caminhos, ouviu o vento e colecionou pequenas ideias.",
@@ -35,7 +35,7 @@ const demoPages: ReaderPage[] = [
       altText: "Crianca lendo em um canto tranquilo.",
       mimeType: "image/jpeg",
     },
-    transcript: "Quando encontrou uma leitora, virou historia e ganhou voz.",
+    transcript: "Quando encontrou uma leitora, virou história e ganhou voz.",
   },
 ];
 
@@ -48,7 +48,7 @@ export const mockBooks: BookRecord[] = [
     status: "published",
     title: "O Jardim das Perguntas",
     description:
-      "Uma narrativa ilustrada sobre curiosidade, escuta e as pequenas descobertas que nascem quando a infancia pergunta sem pressa.",
+      "Uma narrativa ilustrada sobre curiosidade, escuta e as pequenas descobertas que nascem quando a infância pergunta sem pressa.",
     language: "pt-BR",
     ageRange: "6 a 9 anos",
     categories: ["Conto ilustrado"],
@@ -92,7 +92,7 @@ export const mockBooks: BookRecord[] = [
     language: "pt-BR",
     ageRange: "4 a 8 anos",
     categories: ["Poesia visual"],
-    tags: ["brincadeira", "territorio", "imaginacao"],
+    tags: ["brincadeira", "território", "imaginação"],
     contributors: [
       { id: "contributor-rafa-mota", name: "Rafa Mota", role: "author" },
       { id: "contributor-nina-alves", name: "Nina Alves", role: "illustrator" },
@@ -128,11 +128,11 @@ export const mockBooks: BookRecord[] = [
     status: "published",
     title: "Receita de Nuvem",
     description:
-      "Um livro breve e ludico para imaginar materias impossiveis, com paginas pensadas para leitura compartilhada.",
+      "Um livro breve e lúdico para imaginar matérias impossíveis, com páginas pensadas para leitura compartilhada.",
     language: "pt-BR",
     ageRange: "3 a 6 anos",
     categories: ["Livro-imagem"],
-    tags: ["primeira infancia", "imaginacao", "livro-imagem"],
+    tags: ["primeira infância", "imaginação", "livro-imagem"],
     contributors: [
       { id: "contributor-bia-santiago", name: "Bia Santiago", role: "author" },
       { id: "contributor-tom-correa", name: "Tom Correa", role: "illustrator" },

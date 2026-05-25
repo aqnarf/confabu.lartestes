@@ -53,12 +53,12 @@ export default async function BookDetailPage({ params }: { params: Promise<{ slu
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <FileText className="size-5 text-primary" />
-              Informacoes editoriais
+              Informações editoriais
             </CardTitle>
           </CardHeader>
           <CardContent className="grid gap-4 text-sm sm:grid-cols-4">
             <div>
-              <p className="font-medium">Faixa etaria</p>
+              <p className="font-medium">Faixa etária</p>
               <p className="text-muted-foreground">{book.ageRange}</p>
             </div>
             <div>
